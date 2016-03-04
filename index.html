@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>wanwan</title>
+  <title>Jill Chen Studio</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -151,7 +151,7 @@ $(document).ready(function(){
       top:'26%',
         opacity: '1',
     }, 1900);
-    $("#logoSW").delay(3700).animate({opacity: 1}, 2200);
+    $("#logoSW").delay(3800).animate({opacity: 1}, 2200);
  $("#sub1, .title").delay(4200).fadeIn(2000);
   $("#sub2").delay(5000).fadeIn(2000);
   $("span").delay(5000).animate({opacity: 1}, 2000);
@@ -170,13 +170,13 @@ $(document).ready(function(){
          .css('-o-transition', 'all 2.2s ease-out');
 }
 
-setTop(".title");
+setTimeout( function(){setTop(".title"); }, 4000);
 $(window).resize(function(){
     setTop(".title");
 });
   function setTop(ele)
   {
-    var top= $( window ).height()-200+"px";
+    var top= $("#logoS").height()+$("#logoS").offset().top+ "px";
     $(ele).css('top',top);
   }
 
