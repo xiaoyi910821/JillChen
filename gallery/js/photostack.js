@@ -133,11 +133,13 @@
 					this.removeEventListener( 'click', open ); 
 					classie.removeClass( self.el, 'photostack-start' );
 					setTransition();
+
 				}
 				else {
 					self.openDefault = true;
 					setTimeout( setTransition, 25 );
 				}
+				//$(".photostack-start").fadeOut();
 				self.started = true; 
 				self._showPhoto( self.current );
 			};
