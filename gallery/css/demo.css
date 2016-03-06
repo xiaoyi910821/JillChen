@@ -13,12 +13,15 @@
 *, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 html{
 	height: 100%;
+
 }
 body {
 	margin: 0;
 	background: url(../paper2.png) repeat;
 	background-color: #282828;
 	height: 100%;
+	overflow-y: hidden;
+
 }
 .container{
 	height: 100%;
