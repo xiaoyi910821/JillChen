@@ -319,3 +319,24 @@ figure.photostack-current::after {
 	-webkit-transform: scale(0.61);
 	transform: scale(0.61);
 }
+.footer{
+	width: 100%;
+	box-shadow: 0px 0px 6px 0px #181818 ;
+	color:#dddddd;
+	text-transform: uppercase;
+	text-align: center;
+	background-color: #202020 ;
+	padding: 2% 0;
+	min-height: 40px;
+	font-family: 'Poiret One', cursive;
+	text-shadow:0px 0px 3px black;
+}
+.small{
+	font-size: 13px;
+	color:silver;
+
+}
+.footer img{
+	width: 5%;
+	min-width: 50px;
+}
