@@ -814,6 +814,14 @@ $(document).ready(function(){
 	<script src="grid/js/main.js"></script>
 	<script>
 		(function() {
+
+			    /* Every time the window is scrolled ... */
+    $(window).scroll( function(){
+
+               if( $(".footer").offset().top < $(window).scrollTop() + $(window).height() ){                
+                $(".footer").animate({'opacity':'1'},500);
+            }
+        });
 			var support = { transitions: Modernizr.csstransitions },
 				// transition end event name
 				transEndEventNames = { 'WebkitTransition': 'webkitTransitionEnd', 'MozTransition': 'transitionend', 'OTransition': 'oTransitionEnd', 'msTransition': 'MSTransitionEnd', 'transition': 'transitionend' },

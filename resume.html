@@ -81,6 +81,7 @@ body{
 	padding:2.5% 6% 0 8%;
 }
 .part{
+	opacity: 0;
 	width: 100%;
 		padding: 2% 0;
 		-webkit-transition: background-color 0.6s; /* For Safari 3.1 to 6.0 */
@@ -132,6 +133,7 @@ body{
 	background-color: rgba(0,0,0,0.3);
 	padding: 2% 0;
 	min-height: 40px;
+	opacity: 0;
 	text-shadow:0px 0px 3px black;
 }
 .footer img{
@@ -334,8 +336,37 @@ saint louis, MO 63130
 		<span class="small">@2016 JILL CHEN STUDIO<br>
 			<a href="mailto:wanjiao.chen@wustl.edu?Subject=Hello%20Jill%20Chen" target="_top">wanjiao.chen@wustl.edu</span>
 	</div>
+	<script>
+	$(document).ready(function() {
+    
+    /* Every time the window is scrolled ... */
+    $(window).scroll( function(){
+    
+        /* Check the location of each desired element */
+        $(".part").each( function(i){
+            
+            var bottom_of_object = $(this).offset().top;
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object ){
+                
+                $(this).animate({'opacity':'1'},500);
+                    
+            }
+            
+        }); 
 
-
+               if( $(".footer").offset().top < $(window).scrollTop() + $(window).height() ){
+                
+                $(".footer").animate({'opacity':'1'},500);
+                    
+            }
+    
+    });
+    
+});
+	</script>
 
 </body>
 </html>
