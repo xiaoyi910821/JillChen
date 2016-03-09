@@ -7,6 +7,7 @@
 		<title>Studio Showroom</title>
 		  <link href='https://fonts.googleapis.com/css?family=Poiret+One|Indie+Flower|Shadows+Into+Light|Josefin+Sans|Architects+Daughter|Covered+By+Your+Grace|Gloria+Hallelujah' rel='stylesheet' type='text/css'>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="gallery/css/w3.css"/>
 	</head>
 <style>
 
@@ -18,5 +19,31 @@ body{
 
 
 <body>
+	<nav class="w3-sidenav w3-white w3-animate-left" style="display:none;z-index:5">
+  <a href="javascript:void(0)" onclick="w3_close()" 
+  class="w3-closenav w3-large">Close ×</a>
+  <a href="#">Link 1</a>		
+  <a href="#">Link 2</a>		
+  <a href="#">Link 3</a>		
+  <a href="#">Link 4</a>		
+  <a href="#">Link 5</a>		
+</nav>
+
+<div class="w3-overlay" onclick="w3_close()" style="cursor:pointer"></div>
+<div class="w3-container">
+  <span class="w3-opennav w3-xlarge" onclick="w3_open()">☰</span>
+  <p>menu</p>
+</div>  
+     
+<script>
+function w3_open() {
+    document.getElementsByClassName("w3-sidenav")[0].style.display = "block";
+    document.getElementsByClassName("w3-overlay")[0].style.display = "block";
+}
+function w3_close() {
+    document.getElementsByClassName("w3-sidenav")[0].style.display = "none";
+    document.getElementsByClassName("w3-overlay")[0].style.display = "none";
+}
+</script>
 </body>
 </html>
