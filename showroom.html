@@ -10,11 +10,26 @@
 		<link rel="stylesheet" type="text/css" href="gallery/css/w3.css"/>
 	</head>
 <style>
-
+html{
+	height: 100%;
+}
 body{
 	margin: 0;
-	background: url(paper.png) repeat;
+	background: url(black.png);
+	background-size: cover;
 	font-family: 'Poiret One', cursive;
+	height: 100%;
+}
+#triangle {
+	position: absolute;
+	right: 0;
+	top:0;
+	width: 80%;
+	border-bottom: solid #181818;
+	border-left: solid transparent;
+}
+#white{
+	color:#f8f8f8;
 }
 
 </style>
@@ -23,18 +38,30 @@ body{
 <body>
 	<nav class="w3-sidenav w3-white w3-animate-left" style="display:none;z-index:5">
   <a href="javascript:void(0)" onclick="w3_close()" 
-  class="w3-closenav w3-xlarge">Close ×</a>
+  class="w3-closenav xw3-large"><b>X</b></a>
   <a href="#">Link 1</a>			
 </nav>
 
 <div class="w3-overlay" onclick="w3_close()" style="cursor:pointer"></div>
-<div class="w3-container">
+<div class="w3-container" id="white">
   <span class="w3-opennav w3-xlarge" onclick="w3_open()">☰</span>
   <br>
   <span>MENU</span>
 </div>  
+<div id="triangle"></div>
      
 <script>
+var triangle=function(){
+	var height=window.innerHeight;
+	var width=window.innerWidth;
+
+	var div=document.getElementById("triangle");
+	div.style.borderBottomWidth=height+"px";
+	div.style.borderLeftWidth=width*0.6 + "px";
+}
+triangle();
+window.addEventListener("resize", triangle);
+
 function w3_open() {
     document.getElementsByClassName("w3-sidenav")[0].style.display = "block";
     document.getElementsByClassName("w3-overlay")[0].style.display = "block";
