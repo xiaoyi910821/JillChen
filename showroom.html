@@ -16,26 +16,21 @@
 }
 html{
 	height: 100%;
+	background-color: black;
 }
 body{
 	margin: 0;
+	overflow-x:hidden;
 	background: url(black.png);
 	background-size: cover;
-	background-color: black;
+	
 	font-family: 'Poiret One', cursive;
 	height: 100%;
 }
 .header{
 	height: 100%;
 }
-#triangle {
-	position: absolute;
-	right: 0;
-	top:0;
-	width: 80%;
-	border-bottom: solid #dddddd;
-	border-left: solid transparent;
-}
+
 #white{
 	color:#dddddd;
 	letter-spacing: 4px;
@@ -83,7 +78,7 @@ body{
 	color:#dddddd;
 	text-transform: uppercase;
 	text-align: center;
-	background-color: rgba(255,255,255,0.05);
+	background-color: rgba(255,255,255,0.1);
 	padding: 2% 0;
 	min-height: 40px;
 	opacity: 0;
@@ -98,10 +93,12 @@ body{
 	color:silver;
 
 }
+
 </style>
 
 <body>
 	<div class="header">
+
 <nav class="w3-sidenav w3-white w3-animate-left" id="navbar" style="display:none;z-index:5">
 <div class="overlay">
   <a href="javascript:void(0)" onclick="w3_close()" 
@@ -116,24 +113,23 @@ body{
   	<a href="#">ES2</a>
   </div>
   <div class="later">
-	  <a href="resume.html">Resume</a>	
+	  <a href="resume.html" target="_blank">Resume</a>	
 	  <a href="gallery/index.html" >Studio Gallery</a>
   </div>	
 </div>
 </nav>
 
 <div class="w3-overlay" onclick="w3_close()" style="cursor:pointer"></div>
-<div class="w3-container" id="white">
-  <span class="w3-opennav w3-xlarge" onclick="w3_open()">☰</span>
-  <br>
-  <span>MENU</span>
-</div>  
+		<div class="w3-container" id="white">
+		  <span class="w3-opennav w3-xlarge" onclick="w3_open()">☰</span>
+		  <br>
+		  <span>MENU</span>
+		</div>  
 </div>
-
-<div id="triangle"></div>
 
 
 <section class="myshowcase">
+
 
 <section>
 
@@ -146,7 +142,7 @@ body{
 	</div>
      
 <script>
-var triangle=function(){
+/*var triangle=function(){
 	var height=window.innerHeight;
 	var width=window.innerWidth;
 
@@ -155,7 +151,7 @@ var triangle=function(){
 	div.style.borderLeftWidth=width*0.6 + "px";
 }
 triangle();
-window.addEventListener("resize", triangle);
+window.addEventListener("resize", triangle);*/
 
 function w3_open() {
 	$(".overlay").fadeIn(1200);
