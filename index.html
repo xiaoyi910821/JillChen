@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="fold/oridomi.min.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Poiret+One|Indie+Flower|Shadows+Into+Light|Josefin+Sans|Architects+Daughter|Covered+By+Your+Grace|Gloria+Hallelujah' rel='stylesheet' type='text/css'>
 
 </head>
@@ -22,7 +23,7 @@ body{
   width: 100%;
   overflow: hidden;
   margin: 0;
-  background-color: #e8e8e8;
+  background-color: #181818;
   height: 100%;
 }
 
@@ -37,9 +38,24 @@ section{
   filter: blur(10px);
   -webkit-filter: blur(10px);
 }
+#gallery-pannel{
+  display: none;
+  position: absolute;
+  width: 100%;
+    right: 0;
+    z-index: -1;
+   height: 100%;
+  }
 
+  #gallery-pannel object{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+  }
 
 #logoJ, #logoS, #logoSW{
+  z-index: 1999;
   width: 10%;
   position: absolute;
   opacity: 0;
@@ -104,32 +120,25 @@ section{
   opacity: 0.5;
   color: white;
 }
-#top1, #top2, #top3{
-  width: 25%;
-  height: 50%;
-  z-index: 999;
-  position: absolute;
-  left: 50%;
-  margin-left: -177px;
 
-}
 </style>
 
 <body >
+<div id="gallery-pannel">
+   <object type="text/html" data="gallery/index.html">
+    </object>
 
+</div>
 <section >
   <div class="subtitle">
     <a href="showroom.html" id="sub1">showroom</a><br>
-     <a href="resume.html" target="_blank" download id="sub2">resume</a><br>   
+     <a href="resume.html" target="_blank" id="sub2">resume</a><br>   
   </div>
-  <div id="top1"></div>
-   <div id="top2"></div>
-    <div id="top3"></div>
   <img src="J.svg" id="logoJ"/>
     <img src="S.svg" id="logoS"/>
     <img src="SW.svg" id="logoSW"/>
   <div class="title">
-    jill chen <span><a href="gallery/index.html">studio</a></span>
+    jill chen <span><a href="#!" onclick="foldme()">studio</a></span>
   </div>
 </section>
 
@@ -180,6 +189,27 @@ $(window).resize(function(){
   }
 
 });
+
+function foldme()
+{
+    var folded = new OriDomi("section", {
+      vPanels:         4,     // number of panels when folding left or right (vertically oriented)
+      hPanels:         3,   
+      shadingIntesity: .5,
+      speed:           1000  // folding duration in ms
+
+    });
+    
+    folded.reveal(60).accordion(-40).foldUp();
+
+    setTimeout( function(){ 
+    $("section").fadeOut();
+    $("#gallery-pannel").fadeIn(1500);
+    
+    }, 3790);
+   
+}
+
 </script>
 </body>
 
