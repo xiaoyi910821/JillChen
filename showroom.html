@@ -121,7 +121,8 @@ function w3_open() {
     document.getElementsByClassName("w3-overlay")[0].style.display = "block";
 }
 function w3_close() {
-	$(".overlay").fadeOut();
+	$(".overlay, .project, .later").fadeOut();
+
     document.getElementsByClassName("w3-sidenav")[0].style.display = "none";
     document.getElementsByClassName("w3-overlay")[0].style.display = "none";
 }
