@@ -25,21 +25,45 @@ body{
 	right: 0;
 	top:0;
 	width: 80%;
-	border-bottom: solid #181818;
+	border-bottom: solid #202020 ;
 	border-left: solid transparent;
 }
 #white{
-	color:#f8f8f8;
+	color:white;
+}
+#navbar{
+	color:#f0f0f0;
+	padding: 3%;
+	font-size: 31px;
+	letter-spacing: 6px;
+	line-height: 50px;
+	font-variant: small-caps;
+	box-shadow: 0px 0px 3px 0px black;
+	background: url(wall.jpg) repeat;
+	font-family: Century Gothic, sans-serif;
+}
+
+.project{
+	margin-left: 50px;
 }
 
 </style>
 
 
 <body>
-	<nav class="w3-sidenav w3-white w3-animate-left" style="display:none;z-index:5">
+<nav class="w3-sidenav w3-white w3-animate-left" id="navbar" style="display:none;z-index:5">
   <a href="javascript:void(0)" onclick="w3_close()" 
-  class="w3-closenav xw3-large"><b>X</b></a>
-  <a href="#">Link 1</a>			
+  class="w3-closenav xw3-large">X</a>
+  <a href="#">Home</a>	
+  <a href="#">Showcases</a>
+  <div class="project">
+  	<a href="#">urban</a>
+  	<a href="#">airport</a>
+  	<a href="#">housing</a>
+  	<a href="#">ecc</a>
+  </div>
+  <a href="#">Resume</a>	
+  <a href="#">Studio Gallery</a>	
 </nav>
 
 <div class="w3-overlay" onclick="w3_close()" style="cursor:pointer"></div>

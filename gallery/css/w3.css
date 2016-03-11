@@ -325,8 +325,7 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 .w3-text-sand{color:#fdf5e6 !important}.w3-sand,.w3-hover-sand:hover{color:#000 !important;background-color:#fdf5e6 !important}
 .w3-text-teal{color:#009688 !important}.w3-teal,.w3-hover-teal:hover{color:#fff !important;background-color:#009688 !important}
 .w3-text-yellow{color:#d2be0e !important}.w3-yellow,.w3-hover-yellow:hover{color:#000 !important;background-color:#ffeb3b !important}
-.w3-text-white{color:white; !important}.w3-white,.w3-hover-white:hover{color: white;
-background-color: #282828;}
+.w3-text-white{color:white; !important}.w3-white,.w3-hover-white:hover{color: white;}
 .w3-text-black{
 	text-transform: uppercase;
 	font-size: 30px;
