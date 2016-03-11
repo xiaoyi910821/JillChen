@@ -10,6 +10,10 @@
 		<link rel="stylesheet" type="text/css" href="gallery/css/w3.css"/>
 	</head>
 <style>
+* a, a:hover{
+	text-decoration: none;
+	color:inherit;
+}
 html{
 	height: 100%;
 }
@@ -19,6 +23,9 @@ body{
 	background-size: cover;
 	background-color: black;
 	font-family: 'Poiret One', cursive;
+	height: 100%;
+}
+.header{
 	height: 100%;
 }
 #triangle {
@@ -71,10 +78,30 @@ body{
 .later{
 	display: none;
 }
+.footer{
+	width: 100%;
+	color:#dddddd;
+	text-transform: uppercase;
+	text-align: center;
+	background-color: rgba(255,255,255,0.1);
+	padding: 2% 0;
+	min-height: 40px;
+	opacity: 0;
+	text-shadow:0px 0px 3px black;
+}
+.footer img{
+	width: 5%;
+	min-width: 50px;
+}
+.small{
+	font-size: 13px;
+	color:silver;
 
+}
 </style>
 
 <body>
+	<div class="header">
 <nav class="w3-sidenav w3-white w3-animate-left" id="navbar" style="display:none;z-index:5">
 <div class="overlay">
   <a href="javascript:void(0)" onclick="w3_close()" 
@@ -101,7 +128,22 @@ body{
   <br>
   <span>MENU</span>
 </div>  
+</div>
+
 <div id="triangle"></div>
+
+
+<section class="myshowcase">
+
+<section>
+
+	<div class="footer">
+
+		design by Jill Chen & Xiaoyi Zhou<br>
+		<a href="index.html"><img src="logo.svg"/></a><br><br>
+		<span class="small">@2016 JILL CHEN STUDIO<br>
+			<a href="mailto:wanjiao.chen@wustl.edu?Subject=Hello%20Jill%20Chen" target="_top">wanjiao.chen@wustl.edu</span>
+	</div>
      
 <script>
 var triangle=function(){
@@ -129,6 +171,15 @@ function w3_close() {
     document.getElementsByClassName("w3-sidenav")[0].style.display = "none";
     document.getElementsByClassName("w3-overlay")[0].style.display = "none";
 }
+
+    $(window).scroll( function(){
+               if( $(".footer").offset().top < $(window).scrollTop() + $(window).height() ){
+                
+                $(".footer").animate({'opacity':'1'},500);
+                    
+            }
+    
+    });
 </script>
 </body>
 </html>
