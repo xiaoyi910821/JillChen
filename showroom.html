@@ -25,15 +25,17 @@ body{
 	right: 0;
 	top:0;
 	width: 80%;
-	border-bottom: solid #202020 ;
+	border-bottom: solid #f0f0f0 ;
 	border-left: solid transparent;
 }
 #white{
 	color:white;
 }
 #navbar{
-	color:#f0f0f0;
-	padding: 3%;
+	overflow: hidden;
+	min-width: 400px;
+	min-height: 400px;
+	color:white;
 	font-size: 31px;
 	letter-spacing: 6px;
 	line-height: 50px;
@@ -41,29 +43,53 @@ body{
 	box-shadow: 0px 0px 3px 0px black;
 	background: url(wall.jpg) repeat;
 	font-family: Century Gothic, sans-serif;
+	text-shadow:0px 0px 3px black;
 }
-
+.overlay{
+	position: absolute;
+	width: 100%;
+	padding: 12% 10%;
+	background-color: rgba(0,0,0,0.5);
+	min-height: 100%;
+	display: none;
+}
 .project{
+	text-transform: uppercase;
+	display: none;
 	margin-left: 50px;
+	font-size: 18px;
+	line-height: 30px;
+}
+.project a:hover{
+	background-color: rgba(255, 255, 255, 0.5);
+	color:black;
+	text-shadow:0px 0px 3px silver;
+}
+.later{
+	display: none;
 }
 
 </style>
 
-
 <body>
 <nav class="w3-sidenav w3-white w3-animate-left" id="navbar" style="display:none;z-index:5">
+<div class="overlay">
   <a href="javascript:void(0)" onclick="w3_close()" 
-  class="w3-closenav xw3-large">X</a>
-  <a href="#">Home</a>	
+  class="w3-closenav w3-large">X</a>
+  <a href="index.html">Home</a>	
   <a href="#">Showcases</a>
   <div class="project">
-  	<a href="#">urban</a>
-  	<a href="#">airport</a>
+  	<a href="#">urban acupuncture</a>
+  	<a href="#">very fast airport</a>
   	<a href="#">housing</a>
-  	<a href="#">ecc</a>
+  	<a href="#">furnish it: urban wave</a>
+  	<a href="#">ES2</a>
   </div>
-  <a href="#">Resume</a>	
-  <a href="#">Studio Gallery</a>	
+  <div class="later">
+	  <a href="resume.html">Resume</a>	
+	  <a href="gallery/index.html" >Studio Gallery</a>
+  </div>	
+</div>
 </nav>
 
 <div class="w3-overlay" onclick="w3_close()" style="cursor:pointer"></div>
@@ -87,10 +113,15 @@ triangle();
 window.addEventListener("resize", triangle);
 
 function w3_open() {
+	$(".overlay").fadeIn(1200);
+	$(".project").delay(300).fadeIn(800);
+	$(".later").delay(700).fadeIn(800);
+
     document.getElementsByClassName("w3-sidenav")[0].style.display = "block";
     document.getElementsByClassName("w3-overlay")[0].style.display = "block";
 }
 function w3_close() {
+	$(".overlay").fadeOut();
     document.getElementsByClassName("w3-sidenav")[0].style.display = "none";
     document.getElementsByClassName("w3-overlay")[0].style.display = "none";
 }
