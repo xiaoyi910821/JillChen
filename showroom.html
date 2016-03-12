@@ -16,27 +16,32 @@
 }
 html{
 	height: 100%;
-	background-color: black;
+	background-color: #282828;
 }
 body{
 	margin: 0;
 	overflow-x:hidden;
-	background: url(black.png);
-	background-size: cover;
-	
+	background: url(flower2.jpg);
+	background-size:cover;
 	font-family: 'Poiret One', cursive;
 	height: 100%;
 }
 .header{
 	height: 100%;
+	box-shadow: 0px 0px 4px 0px black;
+
 }
 
+
 #white{
-	color:#dddddd;
-	letter-spacing: 4px;
+	color:white;
+	top:0;
+	position: fixed;letter-spacing: 4px;
 
 }
 #navbar{
+	position: fixed;
+	top:0;
 	overflow: hidden;
 	min-width: 400px;
 	min-height: 400px;
@@ -78,7 +83,7 @@ body{
 	color:#dddddd;
 	text-transform: uppercase;
 	text-align: center;
-	background-color: rgba(255,255,255,0.1);
+	background-color: rgba(0,0,0,0.1);
 	padding: 2% 0;
 	min-height: 40px;
 	opacity: 0;
@@ -86,18 +91,83 @@ body{
 }
 .footer img{
 	width: 5%;
-	min-width: 50px;
+	min-width: 60px;
 }
 .small{
 	font-size: 13px;
 	color:silver;
+}
+.graphic img{
 
+	position: absolute;
+	width: 10%;
+	min-width: 80px;
+}
+.graphic img:nth-child(1){
+	min-width: 230px;
+	left:28%;
+	width: 40%;
+}
+.graphic img:nth-child(2){
+	min-width: 80px;
+	left:8%;
+	top:44%;
+	width: 20%;
+}
+.graphic img:nth-child(3){
+	min-width: 220px;
+	left:33%;
+	top:80%;
+	width: 35%;
+}
+.graphic img:nth-child(4){
+	min-width: 80px;
+	left:13%;
+	top:4%;
+	width: 15%;
+}
+.graphic img:nth-child(5){
+	min-width: 60px;
+	left:62%;
+	top:30%;
+	width: 20%;
+}
+.graphic img:nth-child(6){
+	left:28%;
+	top:30%;
+	width: 37%;
+	min-width: 230px;
+}
+#proj{
+	padding: 8% 0;
+	text-align: center;
+	min-width: 210px;
+	z-index: 90;
+	width: 32%;
+	top:32%;
+	left: 33%;
+	position: absolute;
+	
 }
 
-</style>
 
+</style>
 <body>
-	<div class="header">
+<div class="header">
+	<div id="proj">
+		urban<br>
+		airport<br>
+		housing<br>
+		es2
+	</div>
+	<section class="graphic">
+		<img src="ipad.svg" id="ipad"></img>
+		<img src="mac.svg" id="mac"></img>
+		<img src="keyboard.svg" id="keyboard"></img>
+		<img src="watercolors.svg" id="watercolor"></img>
+		<img src="graphic-table.svg" id="table"></img>
+		<img src="eve.svg" id="eve"></img>	
+	</section>
 
 <nav class="w3-sidenav w3-white w3-animate-left" id="navbar" style="display:none;z-index:5">
 <div class="overlay">
@@ -127,7 +197,6 @@ body{
 		</div>  
 </div>
 
-
 <section class="myshowcase">
 
 
@@ -142,16 +211,36 @@ body{
 	</div>
      
 <script>
-/*var triangle=function(){
-	var height=window.innerHeight;
-	var width=window.innerWidth;
 
-	var div=document.getElementById("triangle");
-	div.style.borderBottomWidth=height+"px";
-	div.style.borderLeftWidth=width*0.6 + "px";
-}
-triangle();
-window.addEventListener("resize", triangle);*/
+$(window).load(function()
+{
+	function position()
+		{
+			var core=$("#eve").position();
+			var core_height=$("#eve").height();
+			var core_width=$("#eve").width();
+
+			var ipd_height=$("#ipad").height();
+			var wt_height=$("#watercolor").height();
+
+			var project=$("#proj");
+			$(project).css({height:project.width()*0.75});
+
+			//alert(height);
+
+			$("#ipad").css({top:core.top-ipd_height*0.8});
+			$("#watercolor").css({top:core.top - wt_height*0.7});
+			$("#keyboard").css({top: core.top + core_height-10});
+			$("#table").css({left: core.left + core_width*0.95});
+		}
+		position();
+
+		$(window).resize(function(){
+			position();
+		});
+});
+
+
 
 function w3_open() {
 	$(".overlay").fadeIn(1200);
