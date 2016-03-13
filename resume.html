@@ -12,6 +12,7 @@
 
   <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="gallery/css/w3.css"/>
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -149,6 +150,34 @@ body{
 
 </style>
 <body>
+<nav class="w3-sidenav w3-white w3-animate-left" id="navbar" style="display:none;z-index:5">
+<div class="overlay">
+  <a href="javascript:void(0)" onclick="w3_close()" 
+  class="w3-closenav w3-large">X</a>
+  <a href="index.html">Home</a>	
+  <a href="showrooom.html">Showcases</a>
+
+  <div class="later">
+	  <a href="resume.html" target="_blank">Resume</a>	
+	    <div class="project">
+	  	<a href="#">urban acupuncture</a>
+	  	<a href="#">very fast airport</a>
+	  	<a href="#">housing</a>
+	  	<a href="#">furnish it: urban wave</a>
+	  	<a href="#">ES2</a>
+	  </div>
+	  <a href="gallery/index.html" >Studio Gallery</a>
+  </div>	
+</div>
+</nav>
+
+<div class="w3-overlay" onclick="w3_close()" style="cursor:pointer"></div>
+		<div class="w3-container" id="white">
+		  <span class="w3-opennav w3-xlarge" onclick="w3_open()">☰</span>
+		  <br>
+		  <span>MENU</span>
+		</div>  
+</div>
 
 	<section class="header">
 		<p class="small">@2016 jill chen studio</p>
@@ -368,6 +397,18 @@ saint louis, MO 63130
     });
     
 });
+
+	function w3_open() {
+	$(".overlay").fadeIn(1200);
+	$(".project").delay(300).fadeIn(800);
+	$(".later").delay(300).fadeIn(800);
+
+    document.getElementsByClassName("w3-sidenav")[0].style.display = "block";
+    document.getElementsByClassName("w3-overlay")[0].style.display = "block";
+}
+function w3_close() {
+	$(".overlay, .project, .later, .w3-sidenav, .w3-overlay").fadeOut();
+}
 	</script>
 
 </body>

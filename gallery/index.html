@@ -19,6 +19,27 @@
 
 	</head>
 	<body>
+		<nav class="w3-sidenav w3-white w3-animate-left" id="navbar" style="display:none;z-index:5">
+			<div class="overlay">
+			  <a href="javascript:void(0)" onclick="w3_close()" 
+			  class="w3-closenav w3-large">X</a>
+			  <a href="index.html">Home</a>	
+			  <a href="showroom.html">Showroom</a>
+			  <div class="later">
+				  <a href="../resume.html" target="_blank">Resume</a>	
+				  <a href="gallery/index.html" >Studio Gallery</a>
+			  </div>	
+			</div>
+		</nav>
+
+			<div class="w3-overlay" onclick="w3_close()" style="cursor:pointer"></div>
+					<div class="w3-container" id="white">
+					  <span class="w3-opennav w3-xlarge" onclick="w3_open()">☰</span>
+					  <br>
+					  <span>MENU</span>
+					</div>  
+			</div>
+
 		<div class="container" >
 
 
@@ -813,7 +834,19 @@ $(document).ready(function(){
 	<script src="grid/js/classie.js"></script>
 	<script src="grid/js/main.js"></script>
 	<script>
+				function w3_open() {
+				$(".overlay").fadeIn(1200);
+				//$(".project").delay(300).fadeIn(800);
+				$(".later").delay(200).fadeIn(800);
+
+				    document.getElementsByClassName("w3-sidenav")[0].style.display = "block";
+				    document.getElementsByClassName("w3-overlay")[0].style.display = "block";
+				}
+				function w3_close() {
+					$(".overlay, .later, .w3-sidenav, .w3-overlay").fadeOut();
+				}
 		(function() {
+
 
 			    /* Every time the window is scrolled ... */
     $(window).scroll( function(){

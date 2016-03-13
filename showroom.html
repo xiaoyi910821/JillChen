@@ -8,10 +8,15 @@
 		  <link href='https://fonts.googleapis.com/css?family=Poiret+One|Indie+Flower|Shadows+Into+Light|Josefin+Sans|Architects+Daughter|Covered+By+Your+Grace|Gloria+Hallelujah' rel='stylesheet' type='text/css'>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="gallery/css/w3.css"/>
+		<link href="slider/css/styles.css" rel="stylesheet">
+		<script src="slider/js/jquery-1.10.2.min.js"></script>
+<script src="slider/js/jquery.sldr.js"></script>
+
 	</head>
 <style>
-a, a:hover{
+.header a, .header a:hover{
 	text-decoration: none;
+	color: inherit;
 
 }
 html{
@@ -35,53 +40,6 @@ body{
 
 }
 
-#white{
-	color:white;
-	top:0;
-	position: fixed;letter-spacing: 4px;
-
-}
-#navbar{
-	position: fixed;
-	top:0;
-	overflow: hidden;
-	min-width: 400px;
-	min-height: 400px;
-	color:white;
-	font-size: 31px;
-	letter-spacing: 6px;
-	line-height: 50px;
-	font-variant: small-caps;
-	box-shadow: 0px 0px 3px 0px black;
-	background: url(wall.jpg) repeat;
-	font-family: Century Gothic, sans-serif;
-	text-shadow:0px 0px 3px black;
-}
-.overlay{
-	position: absolute;
-	width: 100%;
-	padding: 12% 10%;
-	background-color: rgba(0,0,0,0.5);
-	min-height: 100%;
-	height: 100%;
-	top:0;
-	display: none;
-}
-.project{
-	text-transform: uppercase;
-	display: none;
-	margin-left: 50px;
-	font-size: 18px;
-	line-height: 30px;
-}
-.project a:hover{
-	background-color: rgba(255, 255, 255, 0.5);
-	color:black;
-	text-shadow:0px 0px 3px silver;
-}
-.later{
-	display: none;
-}
 .footer{
 	width: 100%;
 	color:#dddddd;
@@ -216,6 +174,8 @@ section.myshowcase{
 	background: url(gallery/paper2.png) repeat;
 	position: absolute;
 	top:100%;
+	padding: 10% 0;
+	min-height: 100%;
 	z-index: 900;
 	width: 100%;
 	box-shadow: 0px 0px 6px 0px black;
@@ -224,7 +184,6 @@ section.myshowcase{
 
 </style>
 <body>
-
 <div class="header">
 	<div id="proj">
   	<a href="#!">urban acupuncture</a><br>
@@ -259,10 +218,38 @@ section.myshowcase{
 </div>
 
 <section class="myshowcase">
-	
+	<div class="stage">
+	<div id="SLDR-ONE" class="sldr">
+		<ul class="wrp animate">
+			<li class="elmnt-one"><div class="skew"><div class="wrap"><img src="gallery/housing/model photo1.jpg" width="1000" height="563"></div></div></li>
+			<li class="elmnt-two"><div class="skew"><div class="wrap"><img src="gallery/housing/model photo4 copy.jpg" width="1000" height="563"></div></div></li>
+			<li class="elmnt-three"><div class="skew"><div class="wrap"><img src="gallery/housing/house-render3.jpg" width="1000" height="563"></div></div></li>
+			<li class="elmnt-four"><div class="skew"><div class="wrap"><img src="gallery/housing/model photo3.jpg" width="1000" height="563"></div></div></li>
+		</ul>
+	</div>
+
+	<div class="clear"></div>
+
+	<div class="captions">
+	 <div class="focalPoint"><p><small>Lake</small></p></div>
+	 <div><p><small>Mountain Range</small></p></div>
+	 <div><p><small>Mt. Fuji</small></p></div>
+	 <div><p><small>Pink Forest</small></p></div>
+	</div>
+
+	<ul class="selectors">
+		<li class="focalPoint"><a href="">•</a></li><li><a href="">•</a></li><li><a href="">•</a></li><li><a href="">•</a></li>
+	</ul>
+
+	<button class="sldr-prv sldr-nav prev">Prev</button>
+	<button class="sldr-nxt sldr-nav next">Next</button>
 
 
-<section>
+	<div class="clear"></div>
+
+</div>
+
+</section><!-- end myshowcase-->
 		<div class="footer">
 
 		design by Jill Chen & Xiaoyi Zhou<br>
@@ -300,11 +287,6 @@ section.myshowcase{
 		  <span>MENU</span>
 		</div>  
 </div>
-
-
-
-
-     
 <script>
     $(window).scroll( function(){
     	var x=$(window).scrollTop();
@@ -319,6 +301,8 @@ section.myshowcase{
     	$(".header").css({opacity:y/$(window).height()});
     	//alert(x);
     });
+
+
 
 $(window).load(function()
 {
@@ -361,8 +345,23 @@ $(window).load(function()
 	});
 
 
-});
+			$( '.sldr' ).each( function() {
+		var th = $( this );
+		th.sldr({
+			focalClass    : 'focalPoint',
+			offset        : th.width() / 2,
+			sldrWidth     : 'responsive',
+			nextSlide     : th.nextAll( '.sldr-nav.next:first' ),
+			previousSlide : th.nextAll( '.sldr-nav.prev:first' ),
+			selectors     : th.nextAll( '.selectors:first' ).find( 'li' ),
+			toggle        : th.nextAll( '.captions:first' ).find( 'div' ),
+			sldrAuto      : true,
+			sldrTime      : 4000,
+			hasChange     : true
+		});
+	});
 
+});
 
 
 function w3_open() {
