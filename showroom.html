@@ -16,7 +16,6 @@
 }
 html{
 	height: 100%;
-	overflow-y:auto;
 	background-color: #282828;
 }
 body{
@@ -213,10 +212,11 @@ body{
 	font-size: 22px;
 }
 section.myshowcase{
-	height: 100%;
+	position: absolute;
+	top:100%;
 	z-index: 900;
-	background-color: black;
 	width: 100%;
+	box-shadow: 0px 0px 4px 0px black;
 }
 
 
@@ -258,8 +258,6 @@ section.myshowcase{
 
 	<section class="myshowcase">
 	myshowcase
-	<img src="el.jpg"/>
-
 	<div class="footer">
 
 		design by Jill Chen & Xiaoyi Zhou<br>
@@ -313,17 +311,12 @@ section.myshowcase{
     
     });
 
-    $("body, .header, .myshowcase").scroll(function(){
-    	var x=$(".myshowcase").position().top;
-    	
-
-    	if(x < $(window).height()){
-    		$(".header").css({opacity:x/2500});
-    	}
-    	else {
-    		$(".header").animate({'opacity':'1'});  
-    		}    
-
+    $(window).scroll(function(){
+    	var x=$(window).scrollTop();
+    	$(".myshowcase").css({top:$(window).height()-x});
+    	var y=$(".myshowcase").position().top;
+    	$(".header").css({opacity:y/$(window).height()});
+    	//alert(x);
     });
 
 $(window).load(function()
