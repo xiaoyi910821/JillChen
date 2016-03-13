@@ -29,6 +29,7 @@ body{
 .header{
 	height: 100%;
 	box-shadow: 0px 0px 4px 0px black;
+	display: none;
 
 }
 
@@ -150,6 +151,7 @@ body{
 	width: 15%;
 }
 #water2, #key2{
+	cursor: pointer;
 	-webkit-transition: -webkit-transform 0.7s ease-in-out;
   transition: transform 0.7s ease-in-out;
 }
@@ -172,25 +174,30 @@ body{
 	width: 20%;
 }
 #table2{
+	cursor: pointer;
 	opacity: 0;
 }
 #table2:hover{
 	opacity: 1;
 }
 .eve{
+
 	left:28%;
 	top:30%;
 	width: 37%;
 	min-width: 230px;
 }
+#eve2{
+	display: none;
+	cursor: pointer;
+}
 #proj{
 	text-transform: uppercase;
 	text-shadow:0px 0px 3px #404040;
-	font-size: 18px;
+	font-size: 17px;
 	letter-spacing: 3px;
 	line-height: 40px;
-	padding: 5% 0;
-	text-align: center;
+	padding: 5% 5%;
 	min-width: 210px;
 	z-index: 90;
 	width: 32%;
@@ -198,17 +205,22 @@ body{
 	left: 33%;
 	position: absolute;
 }
+#proj a:hover::after{
+	content: ' \2668';
+	text-transform: uppercase;
+	font-size: 22px;
+}
 
 
 </style>
 <body>
 <div class="header">
 	<div id="proj">
-  	<a href="#">urban acupuncture<br></a>
-  	<a href="#">very fast airport<br></a>
-  	<a href="#">housing<br></a>
-  	<a href="#">furnish it: urban wave<br></a>
-  	<a href="#">ES2<br></a>
+  	<a href="#!">urban acupuncture</a><br>
+  	<a href="#!">very fast airport</a><br>
+  	<a href="#!">housing</a><br>
+  	<a href="#!">furnish it: urban wave</a><br>
+  	<a href="#!">ES2</a><br>
 	</div>
 	<section class="graphic">
 		<img src="ipad.svg" class="ipad"/>
@@ -218,8 +230,8 @@ body{
 		<img src="mac-screen.svg" class="mac" id="mac2"/>
 
 
-		<img src="keyboard.svg" class="keyboard"></img>
-		<img src="keyboard-screen.svg" class="keyboard" id="key2"></img>
+		<img src="keyboard.svg" class="keyboard"/>
+		<img src="keyboard-screen.svg" class="keyboard" id="key2"/>
 
 		<img src="splash.svg" class="watercolor" id="water1"/>
 		<img src="watercolors.svg" class="watercolor"/>
@@ -229,7 +241,9 @@ body{
 		<img src="graphic-table.svg" class="table"/>
 		<img src="graphic-table-screen.svg" class="table" id="table2"/>
 
-		<img src="eve.svg" class="eve"></img>	
+		<img src="eve.svg" class="eve"/>
+		<img src="eve-screen.svg" class="eve" id="eve2"/>
+
 	</section>
 </div>
 
@@ -255,8 +269,6 @@ body{
 </div>
 </nav>
 
-
-
 <div class="w3-overlay" onclick="w3_close()" style="cursor:pointer"></div>
 		<div class="w3-container" id="white">
 		  <span class="w3-opennav w3-xlarge" onclick="w3_open()">☰</span>
@@ -267,8 +279,7 @@ body{
 
 
 <section class="myshowcase">
-
-
+	myshowcase
 <section>
 
 	<div class="footer">
@@ -283,6 +294,7 @@ body{
 
 $(window).load(function()
 {
+	$(".header").fadeIn("slow");
 	function position()
 		{
 			var core=$(".eve").position();
@@ -313,6 +325,13 @@ $(window).load(function()
 	    }, function(){
 	    $("#water1").fadeOut(1000);
 	});
+
+		$("#proj, #eve2").hover(function(){
+	    $("#eve2").fadeTo(1200, 0.7);
+	    }, function(){
+	    $("#eve2").fadeOut(1200);
+	});
+
 
 });
 
