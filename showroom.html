@@ -304,15 +304,14 @@ section.myshowcase{
      
 <script>
     $(window).scroll( function(){
-               if( $(".footer").offset().top < $(window).scrollTop() + $(window).height() ){
+    	var x=$(window).scrollTop();
+
+             if( $(".footer").offset().top < x + $(window).height() ){
                 
                 $(".footer").animate({'opacity':'1'},500);               
             }
-    
-    });
 
-    $(window).scroll(function(){
-    	var x=$(window).scrollTop();
+    	
     	$(".myshowcase").css({top:$(window).height()-x});
     	var y=$(".myshowcase").position().top;
     	$(".header").css({opacity:y/$(window).height()});
