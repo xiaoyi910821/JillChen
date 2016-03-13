@@ -100,46 +100,90 @@ body{
 .graphic img{
 
 	position: absolute;
-	width: 10%;
 	min-width: 80px;
 }
-.graphic img:nth-child(1){
+.ipad{
 	min-width: 230px;
 	left:28%;
 	width: 40%;
 }
-.graphic img:nth-child(2){
+.ipad:nth-child(2){
+	opacity: 0;
+	transition: opacity 1s;
+	-webkit-transition: opacity 1s;
+	-moz-transition: opacity 1s;
+	-o-transition: opacity 1s;
+	cursor: pointer;
+}
+.ipad:nth-child(2):hover{
+	opacity: 1;
+}
+
+.mac{
 	min-width: 80px;
 	left:8%;
 	top:44%;
 	width: 20%;
 }
-.graphic img:nth-child(3){
+#mac2{
+	opacity: 0;
+	transition: opacity 1s;
+	-webkit-transition: opacity 1s;
+	-moz-transition: opacity 1s;
+	-o-transition: opacity 1s;
+	cursor: pointer;
+}
+#mac2:hover{
+	opacity: 1;
+}
+
+.keyboard{
 	min-width: 220px;
 	left:33%;
 	top:80%;
 	width: 35%;
 }
-.graphic img:nth-child(4){
+.watercolor{
 	min-width: 80px;
 	left:13%;
 	top:4%;
 	width: 15%;
 }
-.graphic img:nth-child(5){
+#water2, #key2{
+	-webkit-transition: -webkit-transform 0.7s ease-in-out;
+  transition: transform 0.7s ease-in-out;
+}
+#water2:hover{
+	 -webkit-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+
+}
+#key2:hover{
+		 -webkit-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+}
+#water1{
+	display: none;
+}
+.table{
 	min-width: 60px;
 	left:62%;
 	top:30%;
 	width: 20%;
 }
-.graphic img:nth-child(6){
+#table2{
+	opacity: 0;
+}
+#table2:hover{
+	opacity: 1;
+}
+.eve{
 	left:28%;
 	top:30%;
 	width: 37%;
 	min-width: 230px;
 }
 #proj{
-	color:#303030;
 	text-transform: uppercase;
 	text-shadow:0px 0px 3px #404040;
 	font-size: 18px;
@@ -153,7 +197,6 @@ body{
 	top:32%;
 	left: 33%;
 	position: absolute;
-	
 }
 
 
@@ -168,13 +211,28 @@ body{
   	<a href="#">ES2<br></a>
 	</div>
 	<section class="graphic">
-		<img src="ipad.svg" id="ipad"></img>
-		<img src="mac.svg" id="mac"></img>
-		<img src="keyboard.svg" id="keyboard"></img>
-		<img src="watercolors.svg" id="watercolor"></img>
-		<img src="graphic-table.svg" id="table"></img>
-		<img src="eve.svg" id="eve"></img>	
+		<img src="ipad.svg" class="ipad"/>
+		<img src="ipad-screen.svg" class="ipad"/>
+
+		<img src="mac.svg" class="mac"/>
+		<img src="mac-screen.svg" class="mac" id="mac2"/>
+
+
+		<img src="keyboard.svg" class="keyboard"></img>
+		<img src="keyboard-screen.svg" class="keyboard" id="key2"></img>
+
+		<img src="splash.svg" class="watercolor" id="water1"/>
+		<img src="watercolors.svg" class="watercolor"/>
+		<img src="watercolors-pen.svg" class="watercolor" id="water2"/>
+		
+
+		<img src="graphic-table.svg" class="table"/>
+		<img src="graphic-table-screen.svg" class="table" id="table2"/>
+
+		<img src="eve.svg" class="eve"></img>	
 	</section>
+</div>
+
 
 <nav class="w3-sidenav w3-white w3-animate-left" id="navbar" style="display:none;z-index:5">
 <div class="overlay">
@@ -182,6 +240,7 @@ body{
   class="w3-closenav w3-large">X</a>
   <a href="index.html">Home</a>	
   <a href="#">Showcases</a>
+
   <div class="project">
   	<a href="#">urban acupuncture</a>
   	<a href="#">very fast airport</a>
@@ -196,6 +255,8 @@ body{
 </div>
 </nav>
 
+
+
 <div class="w3-overlay" onclick="w3_close()" style="cursor:pointer"></div>
 		<div class="w3-container" id="white">
 		  <span class="w3-opennav w3-xlarge" onclick="w3_open()">☰</span>
@@ -203,6 +264,7 @@ body{
 		  <span>MENU</span>
 		</div>  
 </div>
+
 
 <section class="myshowcase">
 
@@ -223,28 +285,35 @@ $(window).load(function()
 {
 	function position()
 		{
-			var core=$("#eve").position();
-			var core_height=$("#eve").height();
-			var core_width=$("#eve").width();
+			var core=$(".eve").position();
+			var core_height=$(".eve").height();
+			var core_width=$(".eve").width();
 
-			var ipd_height=$("#ipad").height();
-			var wt_height=$("#watercolor").height();
+			var ipd_height=$(".ipad").height();
+			var wt_height=$(".watercolor").height();
 
 			var project=$("#proj");
 			$(project).css({height:project.width()*0.75});
 
 			//alert(height);
 
-			$("#ipad").css({top:core.top-ipd_height*0.8});
-			$("#watercolor").css({top:core.top - wt_height*0.7});
-			$("#keyboard").css({top: core.top + core_height-10});
-			$("#table").css({left: core.left + core_width*0.95});
+			$(".ipad").css({top:core.top-ipd_height*0.8});
+			$(".watercolor").css({top:core.top - wt_height*0.7});
+			$(".keyboard").css({top: core.top + core_height-10});
+			$(".table").css({left: core.left + core_width*0.95});
 		}
 		position();
 
 		$(window).resize(function(){
 			position();
 		});
+
+	$("#water2").hover(function(){
+	    $("#water1").fadeIn(1000);
+	    }, function(){
+	    $("#water1").fadeOut(1000);
+	});
+
 });
 
 
@@ -258,10 +327,10 @@ function w3_open() {
     document.getElementsByClassName("w3-overlay")[0].style.display = "block";
 }
 function w3_close() {
-	$(".overlay, .project, .later").fadeOut();
+	$(".overlay, .project, .later, .w3-sidenav, .w3-overlay").fadeOut();
 
-    document.getElementsByClassName("w3-sidenav")[0].style.display = "none";
-    document.getElementsByClassName("w3-overlay")[0].style.display = "none";
+    //document.getElementsByClassName("w3-sidenav")[0].style.display = "none";
+   // document.getElementsByClassName("w3-overlay")[0].style.display = "none";
 }
 
     $(window).scroll( function(){
