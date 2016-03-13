@@ -313,14 +313,16 @@ section.myshowcase{
     
     });
 
-    $("body").scroll(function(){
+    $("body, .header, .myshowcase").scroll(function(){
     	var x=$(".myshowcase").position().top;
     	
 
     	if(x < $(window).height()){
     		$(".header").css({opacity:x/2500});
     	}
-    	else $(".header").animate({'opacity':'1'});      
+    	else {
+    		$(".header").animate({'opacity':'1'});  
+    		}    
 
     });
 
