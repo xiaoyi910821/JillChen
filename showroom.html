@@ -182,7 +182,7 @@ section.myshowcase{
 }
 .proj-des{
 	font-weight: 100;
-	box-shadow: 0px 0px 5px 0px #181818 ;
+	box-shadow: 0px 0px 6px 0px #181818 ;
 	background-color: rgba(48,48,48, 0.7);
 	text-shadow:0px 0px 3px black;
 	text-indent: 50px;
@@ -198,8 +198,15 @@ section.myshowcase{
 	text-transform: uppercase;
 	font-size: 40px;
 	letter-spacing: 10px;
-	padding: 3%;
+	padding-top: 3%;
 	font-style: normal;
+}
+.proj-des .date{
+	letter-spacing: 5px;
+	text-align: center;
+	font-size: 19px;
+	padding: 2% 0;
+	color: white;
 }
 .proj-des span{
 	cursor: pointer;
@@ -246,11 +253,21 @@ section.myshowcase{
 <section class="myshowcase">
 	<div class="proj-des">
 		<div id="title">housing<br></div>
+			<div class="date">Sep - Dec 2014</div>
 		<p>As in many small towns of the Midwest, the downtown area of Hillsboro, Illinois has nearly no green space while, further out, farm landscapes and housing are wonderful with multiple styles.</p>
 		<p>Employment and commercial activity is not strong enough to convince young people to live here. To revive its commercial core, to attract young people to come here and to stay here, I propose a new type of residential design to both bridge the social gaps within the town and to activate the downtown area.
-Conceptually this project establishes a broad typological continuum, gradually transforming architecture and landscape typologies from farm, into the city, and through to downtown. <span id="read"><I>read more...</I></span></p>
-		<p id="house-hide">Extending from the area of single family houses, the landscape as greenspace progresses from courtyards serving several individual dwelling to smaller ones with only one or two families in denser more social arrangements.
-The typologies transform from individual farm housing to dwelling units associated with two dimensional courtyards, to three dimensional communities to the three dimensional adaptation of the existing historic buildings downtown.</p>
+Conceptually this project establishes a broad typological continuum, gradually transforming architecture and landscape typologies from farm, into the city, and through to downtown. <I><span id="read">show more...</span></I></p>
+		<div id="house-hide">
+			<img src="gallery/housing/model photo5.jpg"/><br>
+			<img src="gallery/housing/long section.jpg"/><br>
+			<img src="gallery/housing/cluster section.jpg"/><br>
+			<img src="gallery/housing/house-render1.jpg" style="width:80%"/><br>
+			
+			
+			<p>Extending from the area of single family houses, the landscape as greenspace progresses from courtyards serving several individual dwelling to smaller ones with only one or two families in denser more social arrangements.</p>
+			<img src="gallery/housing/SITE PLAN 1.jpg"/><br>
+			<p>The typologies transform from individual farm housing to dwelling units associated with two dimensional courtyards, to three dimensional communities to the three dimensional adaptation of the existing historic buildings downtown.</p></div>
+
 	</div>
 	<div class="stage">
 	<div id="SLDR-ONE" class="sldr">
@@ -259,16 +276,18 @@ The typologies transform from individual farm housing to dwelling units associat
 			<li class="elmnt-two"><div class="skew"><div class="wrap"><img src="gallery/housing/model photo4 copy.jpg" width="1000" height="563"></div></div></li>
 			<li class="elmnt-three"><div class="skew"><div class="wrap"><img src="gallery/housing/house-render3.jpg" width="1000" height="563"></div></div></li>
 			<li class="elmnt-four"><div class="skew"><div class="wrap"><img src="gallery/housing/model photo3.jpg" width="1000" height="563"></div></div></li>
+
 		</ul>
 	</div>
 
 	<div class="clear"></div>
 
 	<div class="captions">
-	 <div class="focalPoint"><p>Lake</p></div>
-	 <div><p>Mountain Range</p></div>
-	 <div><p>Mt. Fuji</p></div>
-	 <div><p>Pink Forest</p></div>
+	 <div class="focalPoint"><p>House Model 1</p></div>
+	 <div><p>House Model 2</p></div>
+	 <div><p>House Render 3</p></div>
+	 <div><p>House Model 3</p></div>
+	 <div><p>House Model 3</p></div>
 	</div>
 
 	<ul class="selectors">
@@ -364,6 +383,7 @@ $(window).load(function()
 
 	 $("#read").click(function(){
         $("#house-hide").fadeToggle("slow");
+        ($("#read").text() === "show more...") ? $("#read").text("show less...") : $("#read").text("show more...");
     });
 
 
@@ -378,7 +398,7 @@ $(window).load(function()
 			selectors     : th.nextAll( '.selectors:first' ).find( 'li' ),
 			toggle        : th.nextAll( '.captions:first' ).find( 'div' ),
 			sldrAuto      : true,
-			sldrTime      : 4000,
+			sldrTime      : 3000,
 			hasChange     : true
 		});
 	});
