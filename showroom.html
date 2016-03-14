@@ -9,8 +9,13 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="gallery/css/w3.css"/>
 		<link href="slider/css/styles.css" rel="stylesheet">
-		<script src="slider/js/jquery-1.10.2.min.js"></script>
 <script src="slider/js/jquery.sldr.js"></script>
+
+<script src="extend/js/jquery.mobile.min.js"></script>
+<script src="extend/js/main.js"></script> <!-- Resource jQuery -->
+	<link rel="stylesheet" href="extend/css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="extend/css/style.css"> <!-- Resource style -->
+	<script src="extend/js/modernizr.js"></script> <!-- Modernizr -->
 
 	</head>
 <style>
@@ -191,7 +196,7 @@ section.myshowcase{
 	color:#cccccc;
 	line-height: 40px;
 }
-.proj-des #title{
+.myshowcase #title{
 	font-family: 'Poiret One', cursive;
 	text-align: center;
 	color:#e8e8e8;
@@ -251,6 +256,47 @@ section.myshowcase{
 </div>
 
 <section class="myshowcase">
+	<div id="title">urban acupuncture<br><br></div>
+		<section class="cd-single-item">
+			
+		<div class="cd-slider-wrapper">
+			<ul class="cd-slider">
+				<li class="selected"><img src="gallery/urban/render1 2.jpg" alt="section plan"></li>
+				<li><img src="gallery/urban/render2 2.jpg" ></li>
+				<li><img src="gallery/urban/render3 2.jpg" ></li>
+				<li><img src="gallery/urban/study model 2.jpg" ></li>
+				<li><img src="gallery/urban/site plan.jpg" ></li>
+				<li><img src="gallery/urban/render4.jpg" ></li>
+				<li><img src="gallery/urban/section2 2.jpg" ></li>
+				<li><img src="gallery/urban/section1.jpg" ></li>
+				<li><img src="gallery/urban/axon.jpg" ></li>
+			</ul> <!-- cd-slider -->
+
+			<ul class="cd-slider-navigation">
+				<li><a href="#0" class="cd-prev inactive">Next</a></li>
+				<li><a href="#0" class="cd-next">Prev</a></li>
+			</ul> <!-- cd-slider-navigation -->
+
+			<a href="#0" class="cd-close">Close</a>
+		</div> <!-- cd-slider-wrapper -->
+
+		<div class="cd-item-info">
+			<h2>Produt Title</h2>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, omnis illo iste ratione.</p>					
+		</div> <!-- cd-item-info -->
+	</section> <!-- cd-single-item -->
+
+	<section class="cd-content">
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum voluptatem, quisquam veniam sequi in quasi excepturi laudantium fugit nihil odio minima quae consequuntur dolorum pariatur obcaecati, adipisci dignissimos officia saepe itaque deleniti porro odit vitae voluptate. Blanditiis sunt obcaecati corporis, alias adipisci. Eum illum voluptatibus expedita nulla eius provident pariatur!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum voluptatem, quisquam veniam sequi in quasi excepturi laudantium fugit nihil odio minima quae consequuntur dolorum pariatur obcaecati, adipisci dignissimos officia saepe itaque deleniti porro odit vitae voluptate.
+		</p>
+	</section><!-- end urban acupuncture-->
+
+
+
+
+
 	<div class="proj-des">
 		<div id="title">housing<br></div>
 			<div class="date">Sep - Dec 2014</div>
@@ -297,7 +343,7 @@ Conceptually this project establishes a broad typological continuum, gradually t
 	<button class="sldr-prv sldr-nav prev">Prev</button>
 	<button class="sldr-nxt sldr-nav next">Next</button>
 	<div class="clear"></div>
-	</div>
+	</div><!-- end housing project -->
 
 
 </section><!-- end myshowcase-->

@@ -90,13 +90,11 @@ div.skew > div.wrap {
 	width: 122%;
 }
 
-.myshowcase img {
-	max-width: 1000px;
-	width: 100%;
-	height: auto;
-	display: block;
-	margin: 0 auto;
-}
+.proj-des img {max-width: 1000px;
+width: 100%;
+height: auto;
+display: block;
+margin: 0 auto;}
 
 .selectors {
 	/*margin: 15px 0 0;*/
