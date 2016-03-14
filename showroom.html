@@ -174,13 +174,39 @@ section.myshowcase{
 	background: url(gallery/paper2.png) repeat;
 	position: absolute;
 	top:100%;
-	padding: 10% 0;
+	padding: 5% 0;
 	min-height: 100%;
-	z-index: 900;
+	z-index: 100;
 	width: 100%;
 	box-shadow: 0px 0px 6px 0px black;
 }
-
+.proj-des{
+	font-weight: 100;
+	box-shadow: 0px 0px 5px 0px #181818 ;
+	background-color: rgba(48,48,48, 0.7);
+	text-shadow:0px 0px 3px black;
+	text-indent: 50px;
+	margin: 0 5%;
+	padding: 2% 10%;
+	color:#cccccc;
+	line-height: 40px;
+}
+.proj-des #title{
+	font-family: 'Poiret One', cursive;
+	text-align: center;
+	color:#e8e8e8;
+	text-transform: uppercase;
+	font-size: 40px;
+	letter-spacing: 10px;
+	padding: 3%;
+	font-style: normal;
+}
+.proj-des span{
+	cursor: pointer;
+}
+#house-hide{
+	display: none;
+}
 
 </style>
 <body>
@@ -218,6 +244,14 @@ section.myshowcase{
 </div>
 
 <section class="myshowcase">
+	<div class="proj-des">
+		<div id="title">housing<br></div>
+		<p>As in many small towns of the Midwest, the downtown area of Hillsboro, Illinois has nearly no green space while, further out, farm landscapes and housing are wonderful with multiple styles.</p>
+		<p>Employment and commercial activity is not strong enough to convince young people to live here. To revive its commercial core, to attract young people to come here and to stay here, I propose a new type of residential design to both bridge the social gaps within the town and to activate the downtown area.
+Conceptually this project establishes a broad typological continuum, gradually transforming architecture and landscape typologies from farm, into the city, and through to downtown. <span id="read"><I>read more...</I></span></p>
+		<p id="house-hide">Extending from the area of single family houses, the landscape as greenspace progresses from courtyards serving several individual dwelling to smaller ones with only one or two families in denser more social arrangements.
+The typologies transform from individual farm housing to dwelling units associated with two dimensional courtyards, to three dimensional communities to the three dimensional adaptation of the existing historic buildings downtown.</p>
+	</div>
 	<div class="stage">
 	<div id="SLDR-ONE" class="sldr">
 		<ul class="wrp animate">
@@ -231,10 +265,10 @@ section.myshowcase{
 	<div class="clear"></div>
 
 	<div class="captions">
-	 <div class="focalPoint"><p><small>Lake</small></p></div>
-	 <div><p><small>Mountain Range</small></p></div>
-	 <div><p><small>Mt. Fuji</small></p></div>
-	 <div><p><small>Pink Forest</small></p></div>
+	 <div class="focalPoint"><p>Lake</p></div>
+	 <div><p>Mountain Range</p></div>
+	 <div><p>Mt. Fuji</p></div>
+	 <div><p>Pink Forest</p></div>
 	</div>
 
 	<ul class="selectors">
@@ -243,11 +277,9 @@ section.myshowcase{
 
 	<button class="sldr-prv sldr-nav prev">Prev</button>
 	<button class="sldr-nxt sldr-nav next">Next</button>
-
-
 	<div class="clear"></div>
+	</div>
 
-</div>
 
 </section><!-- end myshowcase-->
 		<div class="footer">
@@ -259,7 +291,7 @@ section.myshowcase{
 	</div>
 
 
-<nav class="w3-sidenav w3-white w3-animate-left" id="navbar" style="display:none;z-index:5">
+<nav class="w3-sidenav w3-white w3-animate-left" id="navbar" style="display:none">
 <div class="overlay">
   <a href="javascript:void(0)" onclick="w3_close()" 
   class="w3-closenav w3-large">X</a>
@@ -288,24 +320,10 @@ section.myshowcase{
 		</div>  
 </div>
 <script>
-    $(window).scroll( function(){
-    	var x=$(window).scrollTop();
-             if( $(".footer").offset().top < x + $(window).height() ){
-                
-                $(".footer").animate({'opacity':'1'},500);               
-            }
-
-    	
-    	$(".myshowcase").css({top:$(window).height()-x});
-    	var y=$(".myshowcase").position().top;
-    	$(".header").css({opacity:y/$(window).height()});
-    	//alert(x);
-    });
-
-
 
 $(window).load(function()
 {
+
 	$(".header").fadeIn("slow");
 	function position()
 		{
@@ -344,6 +362,10 @@ $(window).load(function()
 	    $("#eve2").fadeOut("slow");
 	});
 
+	 $("#read").click(function(){
+        $("#house-hide").fadeToggle("slow");
+    });
+
 
 			$( '.sldr' ).each( function() {
 		var th = $( this );
@@ -361,8 +383,22 @@ $(window).load(function()
 		});
 	});
 
-});
 
+
+});
+    $(window).scroll( function(){
+    	var x=$(window).scrollTop();
+             if( $(".footer").offset().top < x + $(window).height() ){
+                
+                $(".footer").animate({'opacity':'1'},500);               
+            }
+
+    	
+    	$(".myshowcase").css({top:$(window).height()-x});
+    	var y=$(".myshowcase").position().top;
+    	$(".header").css({opacity:y/$(window).height()});
+    	//alert(x);
+    });
 
 function w3_open() {
 	$(".overlay").fadeIn(1200);

@@ -7,8 +7,9 @@
 
 }
 #navbar{
-	position: fixed;
-	top:0;
+	z-index: 999;	
+	top: 0;
+	position: absolute;
 	overflow: hidden;
 	min-width: 400px;
 	min-height: 400px;
@@ -167,7 +168,7 @@ padding: 20% 50px;
 .w3-opennav:hover,.w3-closenav:hover{cursor:pointer;opacity:0.8}
 .w3-navbar a,.w3-topnav a,.w3-sidenav a,.w3-dropnav a,.w3-pagination li a,.w3-hoverable tbody tr,.w3-btn,.w3-btn-floating,.w3-btn-floating-large
 {-webkit-transition:all 0.3s ease;transition:all 0.3s ease}
-.w3-sidenav{height:100%;width:40%;position:fixed !important;z-index:1;overflow:auto}
+.w3-sidenav{height:100%;width:40%;position:fixed !important;}
 .w3-sidenav a{padding:4px 2px 4px 16px;}
 .w3-sidenav a,.w3-dropnav a{display:block}
 .w3-sidenav .w3-dropdown-hover:hover,.w3-sidenav .w3-dropdown-hover:first-child,.w3-sidenav .w3-dropdown-click:hover{background-color:#ccc;color:#000}
