@@ -16,6 +16,9 @@
 	<link rel="stylesheet" href="extend/css/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="extend/css/style.css"> <!-- Resource style -->
 	<script src="extend/js/modernizr.js"></script> <!-- Modernizr -->
+	  <script src="//cdn.jsdelivr.net/velocity/1.2.2/velocity.min.js"></script>
+  <script src="zoom/js/enhance.js"></script>
+    <link rel="stylesheet" type="text/css" href="zoom/css/zoom.css">
 
 	</head>
 <style>
@@ -164,7 +167,6 @@ body{
 	line-height: 40px;
 	padding: 5% 5%;
 	min-width: 230px;
-	z-index: 90;
 	width: 32%;
 	top:33%;
 	left: 33%;
@@ -180,11 +182,10 @@ body{
 	top:100%;
 	padding-top:6%;
 	min-height: 100%;
-	z-index: 100;
 	width: 100%;
 	box-shadow: 0px 0px 6px 0px black;
 }
-.proj-des{
+.proj-des, .wave{
 	font-weight: 100;
 	box-shadow: 0px 0px 6px 0px #181818 ;
 	background-color: rgba(48,48,48, 0.6);
@@ -254,6 +255,7 @@ body{
 </div>
 
 <section class="myshowcase">
+
 	<div style="margin:0 5%">
 	<div id="title">urban acupuncture<br></div>
 	<div class="date">Jan - May 2015<br><br></div>
@@ -289,10 +291,10 @@ body{
 		<p>
 			In downtown, saint louis, lots of parking garage are not fully used. Thus, I choose parking garage as a needle. This rebuilt project introduces new activities into a kind of abandoned building to activate the surrounding – sport center, benefiting the workers nearby in day time, people who exercise a lot and people who love night time. <br><br>
 		</p>
-		<div style="text-align:center">
-		<a href="http://jillchenstudio.pixieset.com/jillchenstudio/?pid=446982529&id=2&h=MjEzNDM4MTIzOQ" target="_blank"><img src="gallery/urban/render3 2.jpg" /></a>
+		<div style="text-align:center" >
+		<img src="gallery/urban/render3 2.jpg" data-action="zoom"/>
 		<p><I>Urban Acupuncture - Model render 3</I></p>
-		<a href="http://jillchenstudio.pixieset.com/jillchenstudio/?pid=446982543&id=3&h=MjcyMTE3NzgzMQ" target="_blank"><img src="gallery/urban/render4.jpg" /></a>
+		<img src="gallery/urban/render4.jpg" data-action="zoom"/>
 		<p><I>Urban Acupuncture - Model render 4</I></p>
 		</div>
 		<p>
@@ -311,10 +313,10 @@ body{
 		<p>Employment and commercial activity is not strong enough to convince young people to live here. To revive its commercial core, to attract young people to come here and to stay here, I propose a new type of residential design to both bridge the social gaps within the town and to activate the downtown area.
 Conceptually this project establishes a broad typological continuum, gradually transforming architecture and landscape typologies from farm, into the city, and through to downtown. <I><span id="read">show more...</span></I></p>
 		<div id="house-hide">
-			<img src="gallery/housing/model photo5.jpg"/><br>
-			<img src="gallery/housing/long section.jpg"/><br>
-			<img src="gallery/housing/cluster section.jpg"/><br>
-			<img src="gallery/housing/house-render1.jpg" style="width:80%"/><br>
+			<img src="gallery/housing/model photo5.jpg" data-action="zoom"/><br>
+			<img src="gallery/housing/long section.jpg" data-action="zoom"/><br>
+			<img src="gallery/housing/cluster section.jpg" data-action="zoom"/><br>
+			<img src="gallery/housing/house-render1.jpg" style="width:80%" data-action="zoom"/><br>
 			
 			
 			<p>Extending from the area of single family houses, the landscape as greenspace progresses from courtyards serving several individual dwelling to smaller ones with only one or two families in denser more social arrangements.</p>
@@ -351,7 +353,20 @@ Conceptually this project establishes a broad typological continuum, gradually t
 	<button class="sldr-nxt sldr-nav next">Next</button>
 	<div class="clear"></div>
 	</div><!-- end housing project -->
-</div>
+
+	<section class="wave">
+		<div id="title">Furnish it: URBAN WAVE</div>
+		<div class="date">Sep - Dec 2014</div>
+		<p>
+THIS IS A TEAM WORK FOR urban bench design. We design a bench for a garden at St. Louis Ave and Blair Ave. Urban furniture and hardscape can play an important role in offering a wide range of uses for public spaces. The whole process: design bench, presentation, make CNC wood mold, rubber mold, solidification of concrete elements, and assemble pieces of concrete bench.
+
+		</p>
+		<img src="gallery/URBAN WAVE/DEISGN.jpg"/>
+		<img src="gallery/URBAN WAVE/render.jpg"/>
+		<img src="gallery/URBAN WAVE/PIECE.jpg"/>
+		<img src="gallery/URBAN WAVE/process.jpg"/>
+	</section>
+</div><!-- end projects all-->
 
 	<div class="footer">
 
@@ -426,6 +441,7 @@ $(window).load(function()
 		$(window).resize(function(){
 			position();
 		});
+
 
 	$("#water2").hover(function(){
 	    $("#water1").fadeIn(1000);
