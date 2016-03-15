@@ -18,11 +18,16 @@ img {
 Main Components 
 
 -------------------------------- */
-.cd-single-item {
+.cd-single-item{
 	box-shadow: 0px 0px 6px 0px black;
   position: relative;
-
   background: #f0f0f0; }
+
+  .cd-single-item.trans{
+  box-shadow: none;
+  position: relative;
+
+  background: transparent; }
 
 .cd-slider-wrapper {
   position: relative;
@@ -40,10 +45,28 @@ Main Components
   backface-visibility: hidden;
   will-change: width; }
   @media only screen and (min-width: 1024px) {
-    .cd-slider-wrapper {
+    .cd-slider-wrapper.short{
       width: 50%; }
+          .cd-slider-wrapper.long, .airport-des{
+            box-shadow: 0px 0px 6px 0px black;
+            margin-left: 10%;
+      width: 80%; }
       .cd-slider-active .cd-slider-wrapper {
+         margin-left: 0%;
         width: 100%; } }
+.airport-des{
+  margin-bottom: 13%;
+  background-color: rgb(48, 48, 48);
+  padding: 4% 0;
+  text-indent: 50px;
+  line-height: 40px;
+  color:#e8e8e8;
+}
+.airport-des .em{
+  font-size: 35px;
+    font-style: normal;
+  text-align: center;
+}
 
 .cd-slider {
   position: relative;
@@ -98,11 +121,10 @@ Main Components
         position: absolute;
         top: 0;
         left: 0;
-        height: 100%;
+        height: 101%;
         width: 100%;
-        background: rgba(0, 0, 0, 0.5) url("../img/cd-icon-zoom.svg") no-repeat center center;
+        background: rgba(0, 0, 0, 0.5) url("../../cd-icon-zoom.svg") no-repeat center center;
         /* size of the icon */
-        background-size: 48px;
         opacity: 0;
         z-index: 4;
         -webkit-transition: opacity 0.2s;
@@ -249,11 +271,14 @@ Main Components
 .cd-item-info {
   padding: 50px 5%; }
   .cd-item-info h2, .cd-item-info p {
+     text-indent: 50px;
     max-width: 480px; }
   .cd-item-info h2 {
+    color:black;
     font-size: 2.4rem;
     font-weight: bold; }
   .cd-item-info p {
+
     line-height: 1.7;
     margin: 1em 0;
     color: black; }
@@ -275,11 +300,9 @@ Main Components
   color: #cccccc;
   line-height: 40px; }
   .cd-content img{
-    width: 75%;
     box-shadow: 0px 0px 5px 0px black;
   }
-  .cd-content{
-    padding-top: 4%;
-    background-color:rgba(48,48,48, 0.6);
-    margin-bottom: 11%;
-  }
+  .cd-content{padding-top: 4%;
+    margin-bottom: 12%;
+background-color: rgba(48, 48, 48, 0.6);
+}

@@ -1,4 +1,4 @@
-img[data-action="zoom"] {
+img[data-action="zoom"]{
   cursor: pointer;
 }
 
@@ -9,11 +9,13 @@ img[data-action="zoom"] {
 }
 
 img.zoom-img {
+  box-shadow: 0px 0px 5px 0px black;
   cursor: pointer;
 }
 
 .zoom-overlay {
-  z-index: 420;
+  cursor: pointer;
+  z-index: 120;
   background: #181818;
   position: fixed;
   top: 0;
@@ -31,5 +33,14 @@ img.zoom-img {
 }
 
 .zoom-overlay-open .zoom-overlay {
-  opacity: 0.95;
+  opacity: 1;
 }
+.zoom-overlay-open .zoom-overlay::after {
+  position: absolute;
+  font-size: 50px;
+  top:5%;
+  right: 10%;
+  content: '\00D7';
+  color:white;
+  }
+

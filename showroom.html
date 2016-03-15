@@ -18,7 +18,9 @@
 	<script src="extend/js/modernizr.js"></script> <!-- Modernizr -->
 	  <script src="//cdn.jsdelivr.net/velocity/1.2.2/velocity.min.js"></script>
   <script src="zoom/js/enhance.js"></script>
+  <script src="zoom/jquery.zoom.js"></script>
     <link rel="stylesheet" type="text/css" href="zoom/css/zoom.css">
+    <link rel="stylesheet" href="cssslider_files/csss_engine1/style.css">
 
 	</head>
 <style>
@@ -218,6 +220,40 @@ body{
 #house-hide{
 	display: none;
 }
+.leftside {
+	vertical-align: top;
+	display: inline-block;
+	width: 47%;
+	padding: 3%;
+
+}
+.leftside img{
+	box-shadow: 0px 0px 5px 0px black;
+	margin: 4%;
+	display: block;
+}
+		.zoom {
+			display:inline-block;
+			position: relative;
+		}
+		
+		/* magnifying glass icon */
+		.zoom:after {
+			content:'';
+			display:block; 
+			width:33px; 
+			height:33px; 
+			position:absolute; 
+			top:0;
+			right:0;
+			background:url(icon.png);
+		}
+
+		.zoom img {
+			display: block;
+		}
+
+		.zoom img::selection { background-color: transparent; }
 
 </style>
 <body>
@@ -261,7 +297,7 @@ body{
 	<div class="date">Jan - May 2015<br><br></div>
 		<section class="cd-single-item">
 			
-		<div class="cd-slider-wrapper">
+		<div class="cd-slider-wrapper short">
 			<ul class="cd-slider">
 				<li class="selected"><img src="gallery/urban/render1 2.jpg" alt="section plan"></li>
 				<li><img src="gallery/urban/render2 2.jpg" ></li>
@@ -291,8 +327,8 @@ body{
 		<p>
 			In downtown, saint louis, lots of parking garage are not fully used. Thus, I choose parking garage as a needle. This rebuilt project introduces new activities into a kind of abandoned building to activate the surrounding – sport center, benefiting the workers nearby in day time, people who exercise a lot and people who love night time. <br><br>
 		</p>
-		<div style="text-align:center" >
-		<img src="gallery/urban/render3 2.jpg" data-action="zoom"/>
+		<div style="text-align:center;padding: 0 10%" >
+		<img src="gallery/urban/render3 2.jpg" data-action="zoom"/ >
 		<p><I>Urban Acupuncture - Model render 3</I></p>
 		<img src="gallery/urban/render4.jpg" data-action="zoom"/>
 		<p><I>Urban Acupuncture - Model render 4</I></p>
@@ -301,6 +337,61 @@ body{
 			Just like another forest park. The bike trail, car path and people movements in this building create a new vertical city in the downtown area but in a much healthier way. What’s more, it breaks the boundary of the city garden and streets. Re-connect the interior volume with the exterior beautiful scene. 
 		</p>
 	</section><!-- end urban acupuncture-->
+
+
+
+		<div id="title">fast airport<br></div>
+	<div class="date">Sep - Dec 2015<br><br></div>
+		<section class="cd-single-item trans">
+
+		<div class="cd-slider-wrapper long">
+			<ul class="cd-slider">
+				<li class="selected"><img src="gallery/airport/air-render2.jpg"></li>
+				<li><img src="gallery/airport/render1.jpg" ></li>
+				<li><img src="gallery/airport/air-render4.jpg" ></li>
+				<li><img src="gallery/airport/section.jpg" ></li>
+				<li><img src="gallery/airport/section1.jpg" ></li>
+
+			</ul> <!-- cd-slider -->
+
+			<ul class="cd-slider-navigation">
+				<li><a href="#0" class="cd-prev inactive">Next</a></li>
+				<li><a href="#0" class="cd-next">Prev</a></li>
+			</ul> <!-- cd-slider-navigation -->
+
+			<a href="#0" class="cd-close">Close</a>
+		</div> <!-- cd-slider-wrapper -->
+	</section> <!-- cd-single-item -->
+	<div class="airport-des">
+		<div class="em">Design Idea</div>
+		<p style="padding:2% 5%">This is a small domestic airport design starting from making bottle model. Then build a paper model by refining the form of bottle model. Extraction: the space continues all the time and holes in physical model present openings and tunnels for movements and views. </p>
+		<section class="cd-single-item">
+			
+		<div class="cd-slider-wrapper short">
+			<ul class="cd-slider">
+				<li class="selected"><img src="gallery/airport/site plan.jpg"/></li>
+				<li><img src="gallery/urban/render2 2.jpg" /></li>
+				<li><img src="gallery/urban/study model 2.jpg" /></li>
+				<li><img src="gallery/urban/site plan.jpg" /></li>
+			</ul> <!-- cd-slider -->
+
+			<ul class="cd-slider-navigation">
+				<li><a href="#0" class="cd-prev inactive">Next</a></li>
+				<li><a href="#0" class="cd-next">Prev</a></li>
+			</ul> <!-- cd-slider-navigation -->
+
+			<a href="#0" class="cd-close">Close</a>
+		</div> <!-- cd-slider-wrapper -->
+
+		<div class="cd-item-info">
+			<h2>Structure Detail</h2>
+			<p>The design combines the benefits from “bottle” space that their various space quality with the architectural concept that people could see the sky and aircrafts no matter where they are.
+Structure: exterior surface and interior surface are supported via diagrids and connected by truss.</p>					
+		</div> <!-- cd-item-info -->
+	</section> <!-- cd-single-item -->
+
+
+	</div>
 
 
 
@@ -324,6 +415,7 @@ Conceptually this project establishes a broad typological continuum, gradually t
 			<p>The typologies transform from individual farm housing to dwelling units associated with two dimensional courtyards, to three dimensional communities to the three dimensional adaptation of the existing historic buildings downtown.</p></div>
 
 	</div>
+
 	<div class="stage">
 	<div id="SLDR-ONE" class="sldr">
 		<ul class="wrp animate">
@@ -331,7 +423,6 @@ Conceptually this project establishes a broad typological continuum, gradually t
 			<li class="elmnt-two"><div class="skew"><div class="wrap"><img src="gallery/housing/model photo4 copy.jpg" width="1000" height="563"></div></div></li>
 			<li class="elmnt-three"><div class="skew"><div class="wrap"><img src="gallery/housing/house-render3.jpg" width="1000" height="563"></div></div></li>
 			<li class="elmnt-four"><div class="skew"><div class="wrap"><img src="gallery/housing/model photo3.jpg" width="1000" height="563"></div></div></li>
-
 		</ul>
 	</div>
 
@@ -354,18 +445,95 @@ Conceptually this project establishes a broad typological continuum, gradually t
 	<div class="clear"></div>
 	</div><!-- end housing project -->
 
+
+
+
+	<div class="proj-des">
+			<div id="title">ES2 facade design<br></div>
+	<div class="date">Mar - May 2015<br></div>
+		<p>THIS IS a facade design based on energy consumption at certain location. I propose a façade with adjusted blind skin that it provides clear nice view to look out and natural ventilation to breathe in.</p>
+	</div>
+	<div style="text-align:center;background-color: rgba(48,48,48, 0.6);padding-bottom:10%">
+		<div class='csslider1 autoplay '>
+		<input name="cs_anchor1" id='cs_slide1_0' type="radio" class='cs_anchor slide' >
+		<input name="cs_anchor1" id='cs_slide1_1' type="radio" class='cs_anchor slide' >
+		<input name="cs_anchor1" id='cs_slide1_2' type="radio" class='cs_anchor slide' >
+		<input name="cs_anchor1" id='cs_play1' type="radio" class='cs_anchor' checked>
+		<input name="cs_anchor1" id='cs_pause1_0' type="radio" class='cs_anchor pause'>
+		<input name="cs_anchor1" id='cs_pause1_1' type="radio" class='cs_anchor pause'>
+		<input name="cs_anchor1" id='cs_pause1_2' type="radio" class='cs_anchor pause'>
+		<ul>
+			<li class="cs_skeleton"><img src="gallery/FACADE DESIGN/render.jpg" style="width: 100%;"></li>
+			<li class='num0 img slide'> <img src='gallery/FACADE DESIGN/render.jpg' alt='' title='' /></li>
+			<li class='num1 img slide'> <img src='gallery/FACADE DESIGN/front 2.jpg' alt='front 2' title='front 2' /></li>
+			<li class='num2 img slide'> <img src='gallery/FACADE DESIGN/inyr.jpg' alt='inyr' title='inyr' /></li>
+		</ul><div class="cs_engine"></div>
+		<div class='cs_description'>
+			<label class='num0'><span class="cs_title"><span class="cs_wrapper">es2 - render</span></span></label>
+			<label class='num1'><span class="cs_title"><span class="cs_wrapper">es2 - front</span></span></label>
+			<label class='num2'><span class="cs_title"><span class="cs_wrapper">es2 - InYr</span></span></label>
+		</div>
+
+		<div class='cs_play_pause'>
+			<label class='cs_play' for='cs_play1'><span><i></i><b></b></span></label>
+			<label class='cs_pause num0' for='cs_pause1_0'><span><i></i><b></b></span></label>
+			<label class='cs_pause num1' for='cs_pause1_1'><span><i></i><b></b></span></label>
+			<label class='cs_pause num2' for='cs_pause1_2'><span><i></i><b></b></span></label>
+			</div>
+		<div class='cs_arrowprev'>
+			<label class='num0' for='cs_slide1_0'><span><i></i><b></b></span></label>
+			<label class='num1' for='cs_slide1_1'><span><i></i><b></b></span></label>
+			<label class='num2' for='cs_slide1_2'><span><i></i><b></b></span></label>
+		</div>
+		<div class='cs_arrownext'>
+			<label class='num0' for='cs_slide1_0'><span><i></i><b></b></span></label>
+			<label class='num1' for='cs_slide1_1'><span><i></i><b></b></span></label>
+			<label class='num2' for='cs_slide1_2'><span><i></i><b></b></span></label>
+		</div>
+		</div>
+	</div>
+
+		<section class="cd-single-item">
+		<div class="cd-slider-wrapper short">
+			<ul class="cd-slider">
+				<li class="selected"><img src="gallery/FACADE DESIGN/wind2.jpg" alt="section plan"></li>
+				<li><img src="gallery/FACADE DESIGN/blinds.jpg" ></li>
+				<li><img src="gallery/FACADE DESIGN/explode.jpg" ></li>
+			</ul> <!-- cd-slider -->
+
+			<ul class="cd-slider-navigation">
+				<li><a href="#0" class="cd-prev inactive">Next</a></li>
+				<li><a href="#0" class="cd-next">Prev</a></li>
+			</ul> <!-- cd-slider-navigation -->
+			<a href="#0" class="cd-close">Close</a>
+		</div> <!-- cd-slider-wrapper -->
+
+		<div class="cd-item-info">
+			<h2>Design Idea</h2>
+			<p>To be specific, various depth of blinds results in different shadows for sun shading strategy and beautiful undulating facade design. Open view could be achieved by moving up and down the blinds.</p>					
+		</div> <!-- cd-item-info -->
+	</section> <!-- cd-single-item -->
+	<section class="cd-content">
+	</section><!-- end urban acupuncture-->
+
+
+
 	<section class="wave">
 		<div id="title">Furnish it: URBAN WAVE</div>
 		<div class="date">Sep - Dec 2014</div>
 		<p>
 THIS IS A TEAM WORK FOR urban bench design. We design a bench for a garden at St. Louis Ave and Blair Ave. Urban furniture and hardscape can play an important role in offering a wide range of uses for public spaces. The whole process: design bench, presentation, make CNC wood mold, rubber mold, solidification of concrete elements, and assemble pieces of concrete bench.
-
 		</p>
-		<img src="gallery/URBAN WAVE/DEISGN.jpg"/>
-		<img src="gallery/URBAN WAVE/render.jpg"/>
-		<img src="gallery/URBAN WAVE/PIECE.jpg"/>
-		<img src="gallery/URBAN WAVE/process.jpg"/>
+		<div style="display:inline-block">
+			<div class="leftside">
+				<img src="gallery/URBAN WAVE/render.jpg"  data-action="zoom"/>
+				<img src="gallery/URBAN WAVE/DEISGN.jpg" data-action="zoom"/>
+				<img src="gallery/URBAN WAVE/PIECE.jpg"  data-action="zoom"/>
+			</div>
+			<div class="leftside"><img src="gallery/URBAN WAVE/process.jpg" data-action="zoom"/></div>
+		</div>
 	</section>
+
 </div><!-- end projects all-->
 
 	<div class="footer">
@@ -441,6 +609,7 @@ $(window).load(function()
 		$(window).resize(function(){
 			position();
 		});
+		$('#pic1, #pic2, #pic3').zoom();
 
 
 	$("#water2").hover(function(){
