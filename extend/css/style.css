@@ -18,26 +18,11 @@ img {
 Main Components 
 
 -------------------------------- */
-header {
-  height: 170px;
-  line-height: 170px;
-  text-align: center;
-  background: #513e5d;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-  header h1 {
-    font-size: 2rem;
-    color: #ffffff; }
-  @media only screen and (min-width: 768px) {
-    header {
-      height: 200px;
-      line-height: 200px; }
-      header h1 {
-        font-size: 2.6rem; } }
-
 .cd-single-item {
+	box-shadow: 0px 0px 6px 0px black;
   position: relative;
-  background: #ffffff; }
+
+  background: #f0f0f0; }
 
 .cd-slider-wrapper {
   position: relative;
@@ -269,26 +254,10 @@ header {
     font-size: 2.4rem;
     font-weight: bold; }
   .cd-item-info p {
-    line-height: 1.6;
+    line-height: 1.7;
     margin: 1em 0;
-    color: #666666; }
-  .cd-item-info .add-to-cart {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    -o-appearance: none;
-    appearance: none;
-    border: none;
-    padding: .8em 1.6em;
-    background-color: #f42e4e;
-    color: #ffffff;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-family: "PT Sans", sans-serif;
-    font-size: 1.6rem;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 4px; }
+    color: black; }
+
   @media only screen and (min-width: 1024px) {
     .cd-item-info {
       position: absolute;
@@ -299,9 +268,18 @@ header {
       margin: 0; } }
 
 .cd-content p {
-  width: 90%;
-  max-width: 768px;
-  padding: 4em 0;
+	text-indent: 50px;
+  width: 80%;
+  padding: 1.5em 0;
   margin: 0 auto;
-  color: #afa8a0;
-  line-height: 1.8; }
+  color: #cccccc;
+  line-height: 40px; }
+  .cd-content img{
+    width: 75%;
+    box-shadow: 0px 0px 5px 0px black;
+  }
+  .cd-content{
+    padding-top: 4%;
+    background-color:rgba(48,48,48, 0.7);
+    margin-bottom: 14%;
+  }
