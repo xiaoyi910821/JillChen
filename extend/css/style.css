@@ -116,14 +116,16 @@ Main Components
         content: 'desktop'; }
       .cd-slider::after {
         /* slider cover layer - to indicate the image is clickable */
-        content: '';
-        display: block;
+        content: 'CLICK TO SEE MORE';
+        font-size: 33px;
+        padding: 21% 0;
+        display: inline-block;
         position: absolute;
         top: 0;
         left: 0;
-        height: 102%;
+        height: 100%;
         width: 100%;
-        background: rgba(0, 0, 0, 0.5) url("../../cd-icon-zoom.svg") no-repeat center center;
+        background: rgba(0, 0, 0, 0.5);
         /* size of the icon */
         opacity: 0;
         z-index: 4;

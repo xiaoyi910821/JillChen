@@ -22,6 +22,10 @@
 
 	<script src="extend/js/modernizr.js"></script> <!-- Modernizr -->
 	  <script src="//cdn.jsdelivr.net/velocity/1.2.2/velocity.min.js"></script>
+	  <script src="zoom/jquery.zoom.js"></script> 
+	   <script src="zoom/js/enhance.js"></script> 
+	   <script src="crossfade.js"></script> 
+
 
 
 
@@ -235,6 +239,34 @@ body{
 	margin: 4%;
 	display: block;
 }
+.crossfade{
+	vertical-align: middle;
+	display: table;
+	width: 100%;
+	height: 470px;
+	overflow: hidden;
+	position: relative;
+}
+.crossfade img{
+	vertical-align: middle;
+	display: table-cell;
+	width: 45%;
+	margin: 5% 0;
+	box-shadow: 0px 0px 5px 0px black;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.crossfade .paper-model{
+	letter-spacing: 4px;
+	line-height: 70px;
+	text-shadow:0px 0px 3px black;
+	width: 50%;
+	text-align: center;
+	font-size: 35px;
+	vertical-align: middle;
+	display: table-cell;
+}
 </style>
 <body>
 <div class="header">
@@ -369,8 +401,16 @@ body{
 Structure: exterior surface and interior surface are supported via diagrids and connected by truss.</p>					
 		</div> <!-- cd-item-info -->
 	</section> <!-- cd-single-item -->
+	<div class="crossfade">
+		<div class="paper-model">
+			PAPER/PLASTIC MODEL DESIGN
+		</div>
+		<img src="gallery/airport/wanjiao chen - paper model 0.jpg" class="rotating-item" data-action="zoom"/>
+		<img src="gallery/airport/paper6.jpg" class="rotating-item" data-action="zoom"/>
 
-
+		<img src="gallery/airport/paper7 copy.jpg" class="rotating-item" data-action="zoom"/>
+		<img src="gallery/airport/wanjiao chen - plastic model.jpg" class="rotating-item" data-action="zoom"/>
+	</div>
 	</div>
 
 
@@ -391,7 +431,7 @@ Conceptually this project establishes a broad typological continuum, gradually t
 			
 			
 			<p>Extending from the area of single family houses, the landscape as greenspace progresses from courtyards serving several individual dwelling to smaller ones with only one or two families in denser more social arrangements.</p>
-			<img src="gallery/housing/SITE PLAN 1.jpg"/><br>
+			<img src="gallery/housing/SITE PLAN 1.jpg" data-action="zoom"/><br>
 			<p>The typologies transform from individual farm housing to dwelling units associated with two dimensional courtyards, to three dimensional communities to the three dimensional adaptation of the existing historic buildings downtown.</p></div>
 
 	</div>
