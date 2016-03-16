@@ -121,7 +121,7 @@ Main Components
         position: absolute;
         top: 0;
         left: 0;
-        height: 101%;
+        height: 102%;
         width: 100%;
         background: rgba(0, 0, 0, 0.5) url("../../cd-icon-zoom.svg") no-repeat center center;
         /* size of the icon */
