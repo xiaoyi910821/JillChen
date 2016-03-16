@@ -18,7 +18,7 @@ img {
 Main Components 
 
 -------------------------------- */
-.cd-single-item{
+.cd-single-item.solid{
 	box-shadow: 0px 0px 6px 0px black;
   position: relative;
   background: #f0f0f0; }

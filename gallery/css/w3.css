@@ -9,7 +9,6 @@
 #navbar{
 	z-index: 999;	
 	top: 0;
-	position: absolute;
 	overflow: hidden;
 	min-width: 400px;
 	min-height: 400px;
@@ -165,8 +164,7 @@ padding: 20% 50px;
 .w3-animate-zoom {-webkit-animation:animatezoom 0.6s;animation:animatezoom 0.6s}
 @-webkit-keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
 @keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
-.w3-animate-input{-webkit-transition:width 0.4s ease-in-out;transition:width 0.4s ease-in-out}.w3-animate-input:focus{width:100% !important}
-.w3-text-white{color:white; !important}.w3-white,.w3-hover-white:hover{color: white;}
+.w3-animate-input{-webkit-transition:width 0.4s ease-in-out;transition:width 0.4s ease-in-out}.w3-animate-input:focus{width:100% ;!important}
 .w3-text-black{
 	text-transform: uppercase;
 	font-size: 30px;

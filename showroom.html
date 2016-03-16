@@ -21,13 +21,11 @@
 	<script src="extend/js/modernizr.js"></script> <!-- Modernizr -->
 	  <script src="//cdn.jsdelivr.net/velocity/1.2.2/velocity.min.js"></script>
   <script src="zoom/js/enhance.js"></script>
+  <script src="zoom/jquery.zoom.js"></script>
 
 
 	</head>
 <style>
-ol, ul {
-	list-style: none;
-}
  a, a:hover{
 	text-decoration: none;
 	color: inherit;
@@ -38,7 +36,6 @@ html{
 	background-color: #282828;
 }
 body{
-	margin: 0;
 	overflow-x:hidden;
 	background: url(flower2.jpg);
 	background-size:cover;
@@ -46,8 +43,7 @@ body{
 	height: 100%;
 }
 .header{
-	z-index: 0;
-	height: 100%;
+
 	box-shadow: 0px 0px 4px 0px black inset;
 	display: none;
 
@@ -183,9 +179,9 @@ body{
 
 }
 .myshowcase{
+	top:100%;
 	background: url(gallery/paper2.png) repeat;
 	position: absolute;
-	top:100%;
 	padding-top:6%;
 	min-height: 100%;
 	width: 100%;
@@ -202,14 +198,12 @@ body{
 	line-height: 40px;
 }
 .myshowcase #title{
-	font-family: 'Poiret One', cursive;
 	text-align: center;
 	color:#e8e8e8;
 	text-transform: uppercase;
 	font-size: 40px;
 	letter-spacing: 10px;
 	padding-top: 3%;
-	font-style: normal;
 }
 .myshowcase .date{
 	letter-spacing: 5px;
@@ -236,29 +230,6 @@ body{
 	margin: 4%;
 	display: block;
 }
-		.zoom {
-			display:inline-block;
-			position: relative;
-		}
-		
-		/* magnifying glass icon */
-		.zoom:after {
-			content:'';
-			display:block; 
-			width:33px; 
-			height:33px; 
-			position:absolute; 
-			top:0;
-			right:0;
-			background:url(icon.png);
-		}
-
-		.zoom img {
-			display: block;
-		}
-
-		.zoom img::selection { background-color: transparent; }
-
 </style>
 <body>
 <div class="header">
@@ -299,7 +270,7 @@ body{
 	<div style="margin:0 5%">
 	<div id="title">urban acupuncture<br></div>
 	<div class="date">Jan - May 2015<br><br></div>
-		<section class="cd-single-item">
+		<section class="cd-single-item solid">
 			
 		<div class="cd-slider-wrapper short">
 			<ul class="cd-slider">
@@ -369,7 +340,7 @@ body{
 	<div class="airport-des">
 		<div class="em">Design Idea</div>
 		<p style="padding:2% 5%">This is a small domestic airport design starting from making bottle model. Then build a paper model by refining the form of bottle model. Extraction: the space continues all the time and holes in physical model present openings and tunnels for movements and views. </p>
-		<section class="cd-single-item">
+		<section class="cd-single-item solid">
 			
 		<div class="cd-slider-wrapper short">
 			<ul class="cd-slider">
@@ -497,7 +468,7 @@ Conceptually this project establishes a broad typological continuum, gradually t
 		</div>
 	</div>
 
-		<section class="cd-single-item">
+		<section class="cd-single-item solid">
 		<div class="cd-slider-wrapper short">
 			<ul class="cd-slider">
 				<li class="selected"><img src="gallery/FACADE DESIGN/wind2.jpg" alt="section plan"></li>
