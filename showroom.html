@@ -205,7 +205,7 @@ body{
 	color:#cccccc;
 	line-height: 40px;
 }
-.myshowcase #title{
+.myshowcase .title{
 	text-align: center;
 	color:#e8e8e8;
 	text-transform: uppercase;
@@ -269,12 +269,12 @@ body{
 </style>
 <body>
 <div class="header">
-	<div id="proj">
-  	<a href="#!">urban acupuncture</a><br>
-  	<a href="#!">very fast airport</a><br>
-  	<a href="#!">housing</a><br>
-  	<a href="#!">furnish it: urban wave</a><br>
-  	<a href="#!">ES2</a><br>
+	<div id="proj" >
+  	<a href="#!" class="urban">urban acupuncture</a><br>
+  	<a href="#!" class="fastairport">very fast airport</a><br>
+  	<a href="#!" class="housing">housing</a><br>
+  	<a href="#!" class="facade">ES2</a><br>
+  	<a href="#!" class="furnish">furnish it: urban wave</a><br>
 	</div>
 	<section class="graphic">
 		<img src="ipad.svg" class="ipad"/>
@@ -301,10 +301,11 @@ body{
 	</section>
 </div>
 
+
 <section class="myshowcase">
 
 	<div style="margin:0 5%">
-	<div id="title">urban acupuncture<br></div>
+	<div class="title">urban acupuncture<br></div>
 	<div class="date">Jan - May 2015<br><br></div>
 		<section class="cd-single-item solid">
 			
@@ -351,7 +352,7 @@ body{
 
 
 
-		<div id="title">fast airport<br></div>
+		<div class="title">fast airport<br></div>
 	<div class="date">Sep - Dec 2015<br><br></div>
 		<section class="cd-single-item trans">
 
@@ -417,7 +418,7 @@ Structure: exterior surface and interior surface are supported via diagrids and 
 
 
 	<div class="proj-des">
-		<div id="title">housing<br></div>
+		<div class="title">housing<br></div>
 			<div class="date">Sep - Dec 2014</div>
 		<p>As in many small towns of the Midwest, the downtown area of Hillsboro, Illinois has nearly no green space while, further out, farm landscapes and housing are wonderful with multiple styles.</p>
 		<p>Employment and commercial activity is not strong enough to convince young people to live here. To revive its commercial core, to attract young people to come here and to stay here, I propose a new type of residential design to both bridge the social gaps within the town and to activate the downtown area.
@@ -468,7 +469,7 @@ Conceptually this project establishes a broad typological continuum, gradually t
 
 
 	<div class="proj-des">
-			<div id="title">ES2 facade design<br></div>
+			<div class="title">ES2 facade design<br></div>
 	<div class="date">Mar - May 2015<br></div>
 		<p>THIS IS a facade design based on energy consumption at certain location. I propose a façade with adjusted blind skin that it provides clear nice view to look out and natural ventilation to breathe in.</p>
 	</div>
@@ -538,7 +539,7 @@ Conceptually this project establishes a broad typological continuum, gradually t
 
 
 	<section class="wave">
-		<div id="title">Furnish it: URBAN WAVE</div>
+		<div class="title">Furnish it: URBAN WAVE</div>
 		<div class="date">Sep - Dec 2014</div>
 		<p>
 THIS IS A TEAM WORK FOR urban bench design. We design a bench for a garden at St. Louis Ave and Blair Ave. Urban furniture and hardscape can play an important role in offering a wide range of uses for public spaces. The whole process: design bench, presentation, make CNC wood mold, rubber mold, solidification of concrete elements, and assemble pieces of concrete bench.
@@ -575,12 +576,12 @@ THIS IS A TEAM WORK FOR urban bench design. We design a bench for a garden at St
   <a href="index.html">Home</a>	
   <a href="#">Showcases</a>
 
-  <div class="project">
-  	<a href="#!">urban acupuncture</a>
-  	<a href="#!">very fast airport</a>
-  	<a href="#!">housing</a>
-  	<a href="#!">furnish it: urban wave</a>
-  	<a href="#!">ES2</a>
+  <div class="project" onclick="w3_close()">
+  	<a href="#" class="urban">urban acupuncture</a>
+  	<a href="#" class="fastairport">very fast airport</a>
+  	<a href="#" class="housing">housing</a>
+  	<a href="#" class="facade">ES2</a>
+  	<a href="#" class="furnish">furnish it: urban wave</a>
   </div>
   <div class="later">
 	  <a href="resume.html" target="_blank">Resume</a>	
@@ -596,8 +597,6 @@ THIS IS A TEAM WORK FOR urban bench design. We design a bench for a garden at St
 		  <span>MENU</span>
 		</div>  
 </div>
-
-
 <script>
 
 $(window).load(function()
@@ -668,7 +667,7 @@ $(window).load(function()
 
 
 });
-    $(window).scroll( function(){
+    /*$(window).scroll( function(){
     	var x=$(window).scrollTop();
              if( $(".footer").offset().top < x + $(window).height() ){
                 
@@ -680,8 +679,32 @@ $(window).load(function()
     	var y=$(".myshowcase").position().top;
     	$(".header").css({opacity:y/$(window).height()});
     	//alert(x);
-    });
-
+    });*/
+$(".urban").click(function(){
+	 $('body').animate({
+        scrollTop: $(".title").eq(0).offset().top},
+        1600);
+});
+$(".fastairport").click(function(){
+	 $('body').animate({
+        scrollTop: $(".title").eq(1).offset().top},
+        2000);
+});
+$(".housing").click(function(){
+	 $('body').animate({
+        scrollTop: $(".title").eq(2).offset().top},
+        2500);
+});
+$(".facade").click(function(){
+	 $('body').animate({
+        scrollTop: $(".title").eq(3).offset().top},
+        2500);
+});
+$(".furnish").click(function(){
+	 $('body').animate({
+        scrollTop: $(".title").eq(4).offset().top},
+        3800);
+});
 function w3_open() {
 	$(".overlay").fadeIn(1200);
 	$(".project").delay(300).fadeIn(800);
