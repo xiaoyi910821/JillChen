@@ -195,6 +195,10 @@ body{
 	width: 100%;
 	box-shadow: 0px 0px 6px 0px black;
 }
+.block{
+	opacity: 0.1;
+	margin: 0 5%;
+}
 .proj-des, .wave{
 	font-weight: 100;
 	box-shadow: 0px 0px 6px 0px #181818 ;
@@ -303,8 +307,7 @@ body{
 
 
 <section class="myshowcase">
-
-	<div style="margin:0 5%">
+<div class="block">
 	<div class="title">urban acupuncture<br></div>
 	<div class="date">Jan - May 2015<br><br></div>
 		<section class="cd-single-item solid">
@@ -349,8 +352,10 @@ body{
 			Just like another forest park. The bike trail, car path and people movements in this building create a new vertical city in the downtown area but in a much healthier way. What’s more, it breaks the boundary of the city garden and streets. Re-connect the interior volume with the exterior beautiful scene. 
 		</p>
 	</section><!-- end urban acupuncture-->
+</div>
 
 
+<div class="block">
 
 		<div class="title">fast airport<br></div>
 	<div class="date">Sep - Dec 2015<br><br></div>
@@ -374,6 +379,7 @@ body{
 			<a href="#0" class="cd-close">Close</a>
 		</div> <!-- cd-slider-wrapper -->
 	</section> <!-- cd-single-item -->
+
 	<div class="airport-des">
 		<div class="em">Design Idea</div>
 		<p style="padding:2% 5%">This is a small domestic airport design starting from making bottle model. Then build a paper model by refining the form of bottle model. Extraction: the space continues all the time and holes in physical model present openings and tunnels for movements and views. </p>
@@ -413,10 +419,12 @@ Structure: exterior surface and interior surface are supported via diagrids and 
 	</div>
 	</div>
 
+</div>
 
 
 
 
+<div class="block">
 	<div class="proj-des">
 		<div class="title">housing<br></div>
 			<div class="date">Sep - Dec 2014</div>
@@ -464,10 +472,10 @@ Conceptually this project establishes a broad typological continuum, gradually t
 	<button class="sldr-nxt sldr-nav next">Next</button>
 	<div class="clear"></div>
 	</div><!-- end housing project -->
+</div>
 
 
-
-
+<div class="block">
 	<div class="proj-des">
 			<div class="title">ES2 facade design<br></div>
 	<div class="date">Mar - May 2015<br></div>
@@ -535,9 +543,9 @@ Conceptually this project establishes a broad typological continuum, gradually t
 	</section> <!-- cd-single-item -->
 	<section class="cd-content">
 	</section><!-- end urban acupuncture-->
+</div>
 
-
-
+<div class="block">
 	<section class="wave">
 		<div class="title">Furnish it: URBAN WAVE</div>
 		<div class="date">Sep - Dec 2014</div>
@@ -667,28 +675,35 @@ $(window).load(function()
 
 
 });
-    /*$(window).scroll( function(){
+    $(window).scroll( function(){
     	var x=$(window).scrollTop();
-             if( $(".footer").offset().top < x + $(window).height() ){
+    	var y=$(window).height();
+
+    	$(".block").each(function(i){
+    		if($(this).offset().top< x+y )$(this).animate({'opacity':'1'},400);     
+
+    	});
+           if( $(".footer").offset().top < x + y){
                 
-                $(".footer").animate({'opacity':'1'},500);               
+                $(".footer").animate({'opacity':'1'},1000);               
             }
 
+
     	
-    	$(".myshowcase").css({top:$(window).height()-x});
-    	var y=$(".myshowcase").position().top;
-    	$(".header").css({opacity:y/$(window).height()});
+    	//$(".myshowcase").css({top:$(window).height()-x});
+    	//var y=$(".myshowcase").position().top;
+    	//$(".header").css({opacity:y/$(window).height()});
     	//alert(x);
-    });*/
+    });
 $(".urban").click(function(){
 	 $('body').animate({
         scrollTop: $(".title").eq(0).offset().top},
-        1600);
+        1800);
 });
 $(".fastairport").click(function(){
 	 $('body').animate({
         scrollTop: $(".title").eq(1).offset().top},
-        2000);
+        2500);
 });
 $(".housing").click(function(){
 	 $('body').animate({
