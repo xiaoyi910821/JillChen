@@ -91,7 +91,8 @@ section{
   letter-spacing: 12px;
 
 }
-.title span{
+.title em{
+  font-style: normal;
    text-shadow:0px 0px 4px black;
   color: white;
   opacity: 0;
@@ -115,7 +116,7 @@ section{
   display: none;
 }
 
-.subtitle a:hover{
+.subtitle a:hover, .title:hover{
   opacity: 0.5;
 }
 
@@ -136,7 +137,7 @@ section{
     <img src="S.svg" id="logoS"/>
     <img src="SW.svg" id="logoSW"/>
   <div class="title">
-   <a href="#!" onclick="foldme()"> jill chen <span >studio</span></a>
+   <a href="#!" onclick="foldme()"> jill chen <em>studio</em></a>
   </div>
 </section>
 
@@ -160,7 +161,7 @@ $(document).ready(function(){
     $("#logoSW").delay(3500).animate({opacity: 1}, 1200);
  $("#sub1, .title").delay(4200).fadeIn(2000);
   $("#sub2").delay(5000).fadeIn(2000);
-  $("span").delay(5000).animate({opacity: 1}, 2000);
+  $("em").delay(5000).animate({opacity: 1}, 2000);
 
   function blurElement(element, size){
   var filterVal = 'blur('+size+'px)';

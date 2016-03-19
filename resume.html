@@ -159,17 +159,18 @@ body{
 
   <div class="later">
 	  <a href="resume.html" target="_blank">Resume</a>	
-	    <div class="project">
-	  	<a href="#">education</a>
-	  	<a href="#">skill</a>
-	  	<a href="#">experience</a>
-	  	<a href="#">honor</a>
-	  	<a href="#">others</a>
+	    <div class="project" onclick="w3_close()" >
+	  	<a href="#" id="edu" >education</a>
+	  	<a href="#" id="skill">skill</a>
+	  	<a href="#" id="exper">experience</a>
+	  	<a href="#" id="honor">honor</a>
+	  	<a href="#" id="others">others</a>
 	  </div>
 	  <a href="gallery/index.html" >Studio Gallery</a>
   </div>	
 </div>
 </nav>
+
 
 <div class="w3-overlay" onclick="w3_close()" style="cursor:pointer"></div>
 		<div class="w3-container" id="white">
@@ -396,6 +397,31 @@ saint louis, MO 63130
     
     });
     
+});
+$("#edu").click(function(){
+	 $('html,body').animate({
+        scrollTop: $(".part").eq(0).offset().top-100},
+        'slow');
+});
+$("#skill").click(function(){
+	 $('html,body').animate({
+        scrollTop: $(".part").eq(1).offset().top-100},
+        'slow');
+});
+$("#exper").click(function(){
+	 $('html,body').animate({
+        scrollTop: $(".part").eq(2).offset().top-100},
+        'slow');
+});
+$("#honor").click(function(){
+	 $('html,body').animate({
+        scrollTop: $(".part").eq(3).offset().top-100},
+        'slow');
+});
+$("#others").click(function(){
+	 $('html,body').animate({
+        scrollTop: $(".part").eq(4).offset().top-100},
+        'slow');
 });
 
 	function w3_open() {
