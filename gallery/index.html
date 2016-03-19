@@ -850,8 +850,15 @@ $(document).ready(function(){
 
 			    /* Every time the window is scrolled ... */
     $(window).scroll( function(){
+    	    	var x=$(window).scrollTop();
+    	var y=$(window).height();
 
-               if( $(".footer").offset().top < $(window).scrollTop() + $(window).height() ){                
+    	$(".grid__item").each(function(i){
+    		if($(this).offset().top< x+y-50)$(this).animate({'opacity':'1'},500);     
+
+    	});
+
+               if( $(".footer").offset().top < x+y ){                
                 $(".footer").animate({'opacity':'1'},500);
             }
         });
