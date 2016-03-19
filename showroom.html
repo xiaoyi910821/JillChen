@@ -680,7 +680,7 @@ $(window).load(function()
     	var y=$(window).height();
 
     	$(".block").each(function(i){
-    		if($(this).offset().top< x+y )$(this).animate({'opacity':'1'},400);     
+    		if($(this).offset().top< x+y-50)$(this).animate({'opacity':'1'},400);     
 
     	});
            if( $(".footer").offset().top < x + y){
