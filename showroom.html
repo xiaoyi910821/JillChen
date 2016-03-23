@@ -53,8 +53,6 @@ body{
 .header{
 
 	box-shadow: 0px 0px 4px 0px black inset;
-	display: none;
-
 }
 
 .footer{
@@ -610,7 +608,7 @@ THIS IS A TEAM WORK FOR urban bench design. We design a bench for a garden at St
 $(window).load(function()
 {
 
-	$(".header").fadeIn(1600);
+	//$(".header").fadeIn(1600);
 	function position()
 		{
 			var core=$(".eve").position();
@@ -622,8 +620,6 @@ $(window).load(function()
 
 			var project=$("#proj");
 			$(project).css({height:project.width()});
-
-			//alert(height);
 
 			$(".ipad").css({top:core.top-ipd_height*0.8});
 			$(".watercolor").css({top:core.top - wt_height*0.7});
