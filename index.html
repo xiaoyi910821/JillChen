@@ -19,6 +19,7 @@ html {
  width: 100%;
   }
 body{
+  font-weight: 570;
   font-family: 'Poiret One', cursive;
   width: 100%;
   overflow: hidden;
@@ -82,23 +83,27 @@ section{
   z-index: 1999;
   text-transform: uppercase;
    text-shadow:0px 0px 4px gray;
-  font-size: 30px;
-  color:black;
+  font-size: 33px;
   position: relative;
-  top:70%;
   margin-left: -5px;
-  display: none;
-  letter-spacing: 12px;
+    letter-spacing: 12px;
+       -webkit-transition: text-shadow 0.4s, font-size 0.4s; /* Safari */
+    transition: text-shadow 0.4s, font-size 0.4s;
+    transition-timing-function: ease-in-out;
 
+
+}
+.title .firstletter, .title .rest, .title .last{
+  opacity: 0;
 }
 .title em{
   font-style: normal;
    text-shadow:0px 0px 4px black;
   color: white;
-  opacity: 0;
-  cursor: pointer;
+    cursor: pointer;
 }
 .subtitle{
+
   text-align: left;
   z-index: 1999;
   position: absolute;
@@ -110,15 +115,25 @@ section{
   letter-spacing: 8px;
   font-size: 22px;
   color:white;
-  text-shadow:0px 0px 3px black;
+  text-shadow:0px 0px 6px black;
 }
 .subtitle a{
-  display: none;
-}
+   -webkit-transition: margin-left 0.9s, font-size 0.9s; /* Safari */
+    transition: margin-left 0.9s, font-size 0.9s;
+    transition-timing-function: ease-in-out;
+  opacity: 0;
+  
+  }
 
-.subtitle a:hover, .title:hover{
-  opacity: 0.5;
+.title:hover{
+  font-size: 35px;
+  text-shadow:0px 0px 6px black;
 }
+.subtitle a:hover{
+  font-size: 28px;
+  margin-left: 40px;
+  
+  }
 
 </style>
 
@@ -137,7 +152,10 @@ section{
     <img src="S.svg" id="logoS"/>
     <img src="SW.svg" id="logoSW"/>
   <div class="title">
-   <a href="#!" onclick="foldme()"> jill chen <em>studio</em></a>
+   <a href="#!" onclick="foldme()">
+    <span class="firstletter">j</span><span class="rest">il</span><span class="last">l</span>
+    <span class="firstletter">c</span><span class="rest">he</span><span class="last">n</span>
+    <em><span class="firstletter">s</span><span class="rest">tudi</span><span class="last">o</span></em></a>
   </div>
 </section>
 
@@ -159,9 +177,9 @@ $(document).ready(function(){
         opacity: '1',
     }, 1500);
     $("#logoSW").delay(3500).animate({opacity: 1}, 1200);
- $("#sub1, .title").delay(4200).fadeIn(2000);
-  $("#sub2").delay(5000).fadeIn(2000);
-  $("em").delay(5000).animate({opacity: 1}, 2000);
+ $("#sub1, .firstletter").delay(4200).animate({opacity: 1}, 2000);
+  $("#sub2, .rest").delay(5000).animate({opacity: 1}, 2000);
+  $(".last").delay(6000).animate({opacity: 1}, 2000);
 
   function blurElement(element, size){
   var filterVal = 'blur('+size+'px)';
