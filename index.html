@@ -5,10 +5,11 @@
   <title>Jill Chen Studio</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Poiret+One|Indie+Flower|Shadows+Into+Light|Josefin+Sans|Architects+Daughter|Covered+By+Your+Grace|Gloria+Hallelujah' rel='stylesheet' type='text/css'>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="fold/oridomi.min.js"></script>
-  <link href='https://fonts.googleapis.com/css?family=Poiret+One|Indie+Flower|Shadows+Into+Light|Josefin+Sans|Architects+Daughter|Covered+By+Your+Grace|Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+  <script src="jquery.ripples.js"></script>
 
 </head>
 <style>
@@ -246,6 +247,13 @@ $(window).resize(function(){
     }, function(){
     $("p").fadeOut();
   });
+
+$('section').ripples({
+resolution: 512,
+dropRadius: 20,
+perturbance: 0.01,
+interactive: true
+});
 
 });
 
