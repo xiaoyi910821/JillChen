@@ -19,7 +19,7 @@ html {
  width: 100%;
   }
 body{
-  font-weight: 570;
+  font-weight: 580;
   font-family: 'Poiret One', cursive;
   width: 100%;
   overflow: hidden;
@@ -83,12 +83,12 @@ section{
   z-index: 1999;
   text-transform: uppercase;
    text-shadow:0px 0px 4px gray;
-  font-size: 33px;
+  font-size: 26px;
   position: relative;
   margin-left: -5px;
-    letter-spacing: 12px;
-       -webkit-transition: text-shadow 0.4s, font-size 0.4s; /* Safari */
-    transition: text-shadow 0.4s, font-size 0.4s;
+    letter-spacing: 10px;
+       -webkit-transition: text-shadow 0.7s, font-size 0.7s,letter-spacing 0.9s; /* Safari */
+    transition: text-shadow 0.7s, font-size 0.7s,letter-spacing 0.9s;
     transition-timing-function: ease-in-out;
 
 
@@ -112,29 +112,61 @@ section{
   margin-left: 35px;
   text-transform: uppercase;
   line-height: 40px;
-  letter-spacing: 8px;
+  letter-spacing: 3px;
   font-size: 22px;
   color:white;
   text-shadow:0px 0px 6px black;
 }
 .subtitle a{
-   -webkit-transition: margin-left 0.9s, font-size 0.9s; /* Safari */
-    transition: margin-left 0.9s, font-size 0.9s;
+   -webkit-transition: margin-left 0.9s, font-size 0.9s, letter-spacing 0.9s; /* Safari */
+    transition: margin-left 0.9s, font-size 0.9s, letter-spacing 0.9s;
     transition-timing-function: ease-in-out;
   opacity: 0;
   
   }
 
 .title:hover{
-  font-size: 35px;
+  letter-spacing: 16px;
+  font-size: 31px;
   text-shadow:0px 0px 6px black;
 }
 .subtitle a:hover{
+  letter-spacing: 8px;
   font-size: 28px;
   margin-left: 40px;
   
   }
-
+.contact{
+  cursor: pointer;
+  text-align: left;
+  min-width: 27%;
+  letter-spacing: 3px;
+  float: left;
+  text-shadow:0px 0px 3px black;
+  margin-top: 75px;
+  margin-left: 7px;
+  -webkit-transition: all 0.9s ease-in-out, color 0.6s 0.7s, background-color 0.2s 0.5s;
+  -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+    transform-origin: left top 0;
+}
+.contact p{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 15px;
+   display: none;
+}
+.contact:hover{
+  padding: 3%;
+  text-shadow:none;
+  min-height: 30%;
+  background-color: rgba(20, 20, 20, 0.9);
+  color: white;
+  letter-spacing: 4px;
+  font-size: 20px;
+    -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
+}
 </style>
 
 <body >
@@ -157,11 +189,15 @@ section{
     <span class="firstletter">c</span><span class="rest">he</span><span class="last">n</span>
     <em><span class="firstletter">s</span><span class="rest">tudi</span><span class="last">o</span></em></a>
   </div>
+  <div class="contact">CONTACT
+    <p><a href="mailto:wanjiao.chen@wustl.edu?Subject=Hello%20Jill" target="_top">wanjiao.chen@wustl.edu</a></p>
+      <p>314-478-6576<p>
+    </div>
+  </div>
 </section>
 
 <script>
 $(document).ready(function(){
-
 
   setTimeout(function(){ blurElement("section", 0); }, 300);
 
@@ -176,8 +212,8 @@ $(document).ready(function(){
       top:'26%',
         opacity: '1',
     }, 1500);
-    $("#logoSW").delay(3500).animate({opacity: 1}, 1200);
- $("#sub1, .firstletter").delay(4200).animate({opacity: 1}, 2000);
+    $("#logoSW").delay(3600).animate({opacity: 1}, 1000);
+ $("#sub1, .firstletter").delay(4000).animate({opacity: 1}, 2000);
   $("#sub2, .rest").delay(5000).animate({opacity: 1}, 2000);
   $(".last").delay(6000).animate({opacity: 1}, 2000);
 
@@ -201,9 +237,15 @@ $(window).resize(function(){
 });
   function setTop(ele)
   {
-    var top= $("#logoS").height()+$("#logoS").offset().top+ "px";
+    var top= $("#logoS").height()+$("#logoS").offset().top * 1.1+ "px";
     $(ele).css('top',top);
   }
+
+  $(".contact").hover(function(){
+    $("p").delay(900).fadeIn(600);
+    }, function(){
+    $("p").fadeOut();
+  });
 
 });
 
